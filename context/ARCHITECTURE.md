@@ -40,13 +40,13 @@ Name hard constraints and three concrete options. Weights and scores use 1–5; 
 
 ## ADR-001
 
-Title and date: *Delegate editable progress markers to AI assistance - 9-11-2026*
-Status: *Accepted*
-Door / concrete acquisition and execution choice: *Delegate*
-Context: *FEATURES.md requires users to create, edit, update, view, and remove their own progress markers. The feature must persist progress markers and cannot rank users. The budget is zero, and I cannot yet read server code well enough to create or check an entire implementation myself.*
-Decision: *Delegate development of the editable progress-marker feature to AI assistance. I will review and test the implementation against the specification.*
+- Title and date: *Delegate editable progress markers to AI assistance - 9-11-2026*
+- Status: *Accepted*
+- Door / concrete acquisition and execution choice: *Delegate*
+- Context: *FEATURES.md requires users to create, edit, update, view, and remove their own progress markers. The feature must persist progress markers and cannot rank users. The budget is zero, and I cannot yet read server code well enough to create or check an entire implementation myself.*
+- Decision: *Delegate development of the editable progress-marker feature to AI assistance. I will review and test the implementation against the specification.*
 Consequences and revisit trigger: 
-- *Easier: faster development, less technical difficulty with implementation* 
+-  *Easier: faster development, less technical difficulty with implementation* 
 - *Harder: difficulty inspecting the code, especially if the code requires debugging; does not guarantee that all acceptance criteria will be met*
 - *Revisit: Module 4, when a database becomes available; if the architecture changes, write ADR-002 and supersede this decision*
 
