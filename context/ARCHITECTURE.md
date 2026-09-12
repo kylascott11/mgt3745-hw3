@@ -44,7 +44,7 @@ Name hard constraints and three concrete options. Weights and scores use 1–5; 
 - **Status:** *Accepted*
 - **Door / concrete acquisition and execution choice:** *Delegate*
 - **Context:** *FEATURES.md requires users to create, edit, update, view, and remove their own progress markers. The feature must persist progress markers and cannot rank users. The budget is zero, and I cannot yet read server code well enough to create or check an entire implementation myself.*
-- **Decision:** *Delegate development of the editable progress-marker feature to AI assistance. I will review and test the implementation against the specification.*
+- **Decision:** *Delegate development of the editable progress-tracker feature to AI assistance.*
 - **Consequences and revisit trigger:** 
   - **Easier:** *faster development, less technical difficulty with implementation* 
   - **Harder:** *difficulty inspecting the code, especially if the code requires debugging; does not guarantee that all acceptance criteria will be met*
