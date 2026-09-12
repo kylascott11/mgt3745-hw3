@@ -12,8 +12,12 @@ This file is normative if an adapter or context/CLAUDE.md conflicts. Repair inco
 
 ## Split Test
 **Naming:** *This rule applies to every coding task in the project. It stays the same from task to task because descriptive camelCase identifiers and avoiding unnecessary abbreviations promote consistent naming to ensure the code is understandable. If this rule were placed in the wrong place and not applied to every coding task, it would create inconsistency, creating a risk of confusion.*
+- **Verdict:** *This rule belongs in CLAUDE.md.*
 
 **Comments:** *This rule applies to some tasks, specifically tasks that involve writing or reviewing code. It changes from task to task because the amount and purpose of comments depend on the difficulty of the code being written and whether the reasoning needs explanation. If it lands in the wrong place, it could cause distraction because the model would carry a task-specific instruction into interactions where comments are not relevant.*
+- **Verdict:** *This rule belongs in the prompt for the task that needs it.*
+- **Prompt Snippet** *When writing or reviewing code, use comments to explain significant reasoning when the code is not immediately understandable. Do not comment every line; use meaningful names instead.*
 
 **Commits:** *This rule is also task-specific, mainly applying to tasks that involve creating or reviewing commits. However, it stays the same from task to task whenever a commit is being made because the message requirements do not change. If it lands in the wrong place, it could cause confusion because the model may apply commit-specific instructions during tasks that do not involve commits.*
-
+- **Verdict:** *This rule belongs in the prompt for the task that needs it.*
+- **Prompt Snippet** *When creating a commit, keep the commit message under 10 words, use present tense, and include a verb and a specific noun.*
