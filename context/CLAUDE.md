@@ -7,4 +7,4 @@ Use descriptive camelCase names and avoid unnecessary abbreviations. Keep HTML, 
 Root CLAUDE.md imports this file for Claude Code. VS Code Copilot uses the separate .github/copilot-instructions.md adapter. A location under /context alone is not a guarantee of automatic discovery.
 
 ## Colleague Test
-I gave my file to Belle, my roommate who is an industrial engineer. She is more well-versed in code than I am and understood the instructions. She said it was very straightforward and didn't flag anything that needed clarification. Since I removed my commit and comment standards from these instructions, it is fairly similar to the original example provided. No revision was needed.
+*I gave my file to Belle, my roommate who is an industrial engineer. She is more well-versed in code than I am and understood the instructions. She said it was very straightforward and didn't flag anything that needed clarification. Since I removed my commit and comment standards from these instructions, it is fairly similar to the original example provided. No revision was needed.*
