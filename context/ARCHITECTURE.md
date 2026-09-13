@@ -36,7 +36,7 @@ Status: ACTIVE in Module 3.
 2. **Existing-service option:** *88*
 3. **AI-Assisted build:** *89*
 
-**Sensitivity Analysis:** *If I were to reverse the weights of the criteria by increasing the weights of cost to start, time to working, and switching cost from 3 to 5, while decreasing the weights of cost to maintain, inspectability, and fit to spec from 5 to 3, the AI-assisted build remained the highest-scoring option at 97, compared with 88 for the existing-service option and 85 for the hand-built option. This reversal of weights tests whether the preferred option changes when different considerations are prioritized over my chosen important criterion: maintenance, inspectability, and fit to the spec. I cannot yet read server code well enough to create it entirely myself or check it, leading to a lower inspectability score for the AI-assisted build.*
+**Sensitivity Analysis:** *If I were to reverse the weights of the criteria by increasing the weights of cost to start, time to working, and switching cost from 3 to 5, while decreasing the weights of cost to maintain, inspectability, and fit to spec from 5 to 3, the AI-assisted build remained the highest-scoring option at 97, compared with 88 for the existing-service option and 85 for the hand-built option. This reversal of weights tests whether the preferred option changes when different considerations are prioritized over my chosen important criterion: maintenance, inspectability, and fit to the spec. I am not the most well-versed in reading server code, leading to a lower inspectability score for the AI-assisted build.*
 
 ## ADR-001
 **Title and date:** *Delegate editable progress markers to AI assistance - 9-11-2026*
