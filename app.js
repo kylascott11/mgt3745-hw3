@@ -5,7 +5,7 @@
   const goalForm = document.querySelector('#goalForm');
   const goalNameInput = document.querySelector('#goalName');
   const goalStatusSelect = document.querySelector('#goalStatus');
-  const inprogressGoalList = document.querySelector('#inprogressGoalList');
+  const inProgressGoalList = document.querySelector('#inProgressGoalList');
   const completedGoalList = document.querySelector('#completedGoalList');
   const goalError = document.querySelector('#goalError');
   const saveStatus = document.querySelector('#saveStatus');
@@ -116,7 +116,7 @@
   }
 
   function renderProgressGoals() {
-    inprogressGoalList.replaceChildren();
+    inProgressGoalList.replaceChildren();
     completedGoalList.replaceChildren();
     emptyState.hidden = progressTracker.goals.length > 0;
 
@@ -138,7 +138,7 @@
 
       const goalList = progressGoal.status === 'completed'
         ? completedGoalList
-        : inprogressGoalList;
+        : inProgressGoalList;
       goalList.append(listItem);
     });
   }
