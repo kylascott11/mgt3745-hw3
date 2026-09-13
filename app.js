@@ -1,90 +1,101 @@
 (() => {
   'use strict';
 
-  const storageKey = 'mgt3745.notes.v617';
-  const noteForm = document.querySelector('#note-form');
-  const noteInput = document.querySelector('#note-input');
-  const noteList = document.querySelector('#note-list');
-  const noteError = document.querySelector('#note-error');
-  const saveStatus = document.querySelector('#save-status');
-  const emptyState = document.querySelector('#empty-state');
-  // The query switch enables a repeatable classroom failure without filling real storage.
-  const simulateFailedSave = new URLSearchParams(window.location.search).has('failSave');
-  let notes = loadNotes();
+  const storageKey = 'mgt3745.progressTracker.v1';
+  const goalForm = document.querySelector('#goalForm');
+  const goalNameInput = document.querySelector('#goalName');
+  const goalStatusSelect = document.querySelector('#goalStatus');
+  const inprogressGoalList = document.querySelector('#inprogressGoalList');
+  const completedGoalList = document.querySelector('#completedGoalList');
+  const goalError = document.querySelector('#goalError');
+  const saveStatus = document.querySelector('#saveStatus');
+  const saveError = document.querySelector('#saveError');
+  const emptyState = document.querySelector('#emptyState');
+  let progressTracker = loadProgressTracker();
+  let nextGoalId = progressTracker.goals.reduce(
+    (highestId, progressGoal) => Math.max(highestId, progressGoal.id),
+    0
+  ) + 1;
 
-  function loadNotes() {
+  function loadProgressTracker() {
     try {
       const storedText = window.localStorage.getItem(storageKey);
-      const parsed = storedText === null ? [] : JSON.parse(storedText);
-      if (!Array.isArray(parsed) || parsed.some(note => typeof note !== 'string')) {
+      const parsed = storedText === null ? { goals: [] } : JSON.parse(storedText);
+      const validStatuses = ['not-started', 'in-progress', 'completed'];
+      const hasValidGoals = Array.isArray(parsed.goals) && parsed.goals.every(progressGoal => (
+        Number.isInteger(progressGoal.id)
+        && typeof progressGoal.name === 'string'
+        && validStatuses.includes(progressGoal.status)
+      ));
+      if (!hasValidGoals) {
         throw new Error('Unexpected stored data');
       }
       return parsed;
     } catch {
-      saveStatus.textContent = 'Saved notes could not be read. Original storage was left unchanged. A successful new save will replace it.';
-      return [];
+      saveStatus.textContent = 'Goals/expectations could not be read. Starting with an empty list.';
+      return { goals: [] };
     }
   }
 
-  function saveNotes(nextNotes) {
+  function saveProgressTracker(nextProgressTracker) {
     try {
-      if (simulateFailedSave) throw new Error('Simulated write failure');
-      // Persist the proposed state before changing the visible state or clearing input.
-      window.localStorage.setItem(storageKey, JSON.stringify(nextNotes));
+      window.localStorage.setItem(storageKey, JSON.stringify(nextProgressTracker));
       return true;
     } catch {
-      noteError.textContent = 'Could not save. Your text is still here. Try again when storage is available.';
+      saveError.textContent = 'Could not save. Your goal/expectation is still here. Try again when storage is available.';
       saveStatus.textContent = '';
       return false;
     }
   }
 
-  function renderNotes() {
-    noteList.replaceChildren();
-    emptyState.hidden = notes.length > 0;
-    notes.forEach((note, index) => {
+  function renderProgressGoals() {
+    inprogressGoalList.replaceChildren();
+    completedGoalList.replaceChildren();
+    emptyState.hidden = progressTracker.goals.length > 0;
+
+    progressTracker.goals.forEach(progressGoal => {
       const listItem = document.createElement('li');
-      const noteText = document.createElement('span');
-      noteText.textContent = note;
-      const deleteButton = document.createElement('button');
-      deleteButton.type = 'button';
-      deleteButton.textContent = 'Delete';
-      deleteButton.setAttribute('aria-label', `Delete note ${index + 1}: ${note}`);
-      deleteButton.addEventListener('click', () => {
-        const nextNotes = notes.filter((entry, entryIndex) => entryIndex !== index);
-        if (!saveNotes(nextNotes)) return;
-        notes = nextNotes;
-        noteError.textContent = '';
-        renderNotes();
-        saveStatus.textContent = 'Note deleted.';
-        noteInput.focus();
-      });
-      listItem.append(noteText, deleteButton);
-      noteList.append(listItem);
+      const goalName = document.createElement('h4');
+      const goalStatus = document.createElement('p');
+      goalName.textContent = progressGoal.name;
+      goalStatus.textContent = progressGoal.status;
+      listItem.append(goalName, goalStatus);
+
+      const goalList = progressGoal.status === 'completed'
+        ? completedGoalList
+        : inprogressGoalList;
+      goalList.append(listItem);
     });
   }
 
-  noteForm.addEventListener('submit', event => {
+  goalForm.addEventListener('submit', event => {
     event.preventDefault();
-    const candidate = noteInput.value.trim();
-    const characterCount = Array.from(candidate).length;
-    if (characterCount < 1 || characterCount > 200) {
-      noteError.textContent = 'Enter a note containing 1–200 characters.';
-      noteInput.setAttribute('aria-invalid', 'true');
-      saveStatus.textContent = '';
-      noteInput.focus();
+    const goalName = goalNameInput.value.trim();
+    if (goalName.length === 0) {
+      goalError.textContent = 'Enter a goal or expectation name.';
+      goalNameInput.setAttribute('aria-invalid', 'true');
+      goalNameInput.focus();
       return;
     }
-    noteInput.removeAttribute('aria-invalid');
-    noteError.textContent = '';
-    const nextNotes = [...notes, candidate];
-    if (!saveNotes(nextNotes)) return;
-    notes = nextNotes;
-    renderNotes();
-    noteInput.value = '';
-    noteInput.focus();
-    saveStatus.textContent = 'Note saved in this browser.';
+
+    const progressGoal = {
+      id: nextGoalId,
+      name: goalName,
+      status: goalStatusSelect.value
+    };
+    const nextProgressTracker = { goals: [...progressTracker.goals, progressGoal] };
+    if (!saveProgressTracker(nextProgressTracker)) return;
+
+    nextGoalId += 1;
+    progressTracker = nextProgressTracker;
+    renderProgressGoals();
+    goalForm.reset();
+    goalError.textContent = '';
+    saveError.textContent = '';
+    goalNameInput.removeAttribute('aria-invalid');
+    goalNameInput.focus();
+    saveStatus.textContent = 'Goal/Expectation saved in this browser.';
   });
 
-  renderNotes();
+  renderProgressGoals();
 })();
