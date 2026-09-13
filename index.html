@@ -40,21 +40,21 @@
 
       <section aria-labelledby="inprogressHeading">
         <h3 id="inprogressHeading">In Progress</h3>
-        <ul id="inprogressMarkerList" aria-label="In progress goals/expectations"></ul>
+        <ul id="inprogressGoalList" aria-label="In progress goals/expectations"></ul>
       </section>
 
       <section aria-labelledby="completedHeading">
         <h3 id="completedHeading">Completed</h3>
-        <ul id="completedMarkerList" aria-label="Completed goals/expectations"></ul>
+        <ul id="completedGoalList" aria-label="Completed goals/expectations"></ul>
       </section>
     </section>
 
     <template id="markerTemplate">
-      <li class="progress-marker">
+      <li class="progress-tracker">
         <article>
-          <h4 class="marker-name"></h4>
-          <p class="marker-status"></p>
-          <div class="marker-actions" aria-label="Progress marker actions">
+          <h4 class="tracker-name"></h4>
+          <p class="tracker-status"></p>
+          <div class="tracker-actions" aria-label="Progress Tracker actions">
             <button type="button" data-action="edit">Edit</button>
             <button type="button" data-action="update">Update</button>
             <button type="button" data-action="complete">Mark complete</button>
