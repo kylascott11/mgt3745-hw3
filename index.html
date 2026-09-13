@@ -3,25 +3,66 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Meeting notes | MGT 3745 starter</title>
+  <title>Progress Tracker | MGT 3745</title>
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
 <body>
   <main>
-    <h1>Meeting notes</h1>
-    <p>Keep short notes in this browser. Use fictional, non-sensitive information.</p>
-    <form id="note-form" novalidate>
-      <label for="note-input">New note</label>
-      <p id="note-help">Enter 1–200 characters. Notes stay in this browser profile and site only.</p>
-      <input id="note-input" name="note" type="text" aria-describedby="note-help note-error" autocomplete="off">
-      <button type="submit">Save note</button>
-      <p id="note-error" role="alert"></p>
-    </form>
-    <p id="save-status" role="status" aria-live="polite"></p>
-    <h2>Saved notes</h2>
-    <p id="empty-state">No saved notes yet.</p>
-    <ul id="note-list" aria-label="Saved notes"></ul>
+    <h1>Progress Tracker</h1>
+    <p>Create a goal or expectation set by yourself or your environment and record your progress.</p>
+
+    <section aria-labelledby="createGoalHeading">
+      <h2 id="createGoalHeading">Create a Goal/Expectation</h2>
+      <form id="goalForm" novalidate>
+        <label for="goalName">Goal/Expectation Name</label>
+        <input id="goalName" name="goalName" type="text" aria-describedby="goalNameHelp goalError" autocomplete="off">
+        <p id="goalNameHelp">Enter a short description of something you are working toward.</p>
+
+        <label for="goalStatus">Status</label>
+        <select id="goalStatus" name="goalStatus" aria-describedby="goalError">
+          <option value="not-started">Not started</option>
+          <option value="in-progress">In progress</option>
+          <option value="completed">Completed</option>
+        </select>
+
+        <button type="submit">Add goal/expecatation</button>
+        <p id="goalError" role="alert" aria-live="assertive"></p>
+      </form>
+    </section>
+
+    <p id="saveStatus" role="status" aria-live="polite"></p>
+    <p id="saveError" role="alert" aria-live="assertive"></p>
+
+    <section aria-labelledby="progressHeading">
+      <h2 id="progressHeading">Your Progress</h2>
+      <p id="emptyState">No goals/expectations set yet.</p>
+
+      <section aria-labelledby="incompleteHeading">
+        <h3 id="incompleteHeading">Incomplete</h3>
+        <ul id="incompleteMarkerList" aria-label="Incomplete goals/expectations"></ul>
+      </section>
+
+      <section aria-labelledby="completedHeading">
+        <h3 id="completedHeading">Completed</h3>
+        <ul id="completedMarkerList" aria-label="Completed goals/expectations"></ul>
+      </section>
+    </section>
+
+    <template id="markerTemplate">
+      <li class="progress-marker">
+        <article>
+          <h4 class="marker-name"></h4>
+          <p class="marker-status"></p>
+          <div class="marker-actions" aria-label="Progress marker actions">
+            <button type="button" data-action="edit">Edit</button>
+            <button type="button" data-action="update">Update</button>
+            <button type="button" data-action="complete">Mark complete</button>
+            <button type="button" data-action="remove">Remove</button>
+          </div>
+        </article>
+      </li>
+    </template>
   </main>
 </body>
 </html>
