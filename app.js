@@ -48,6 +48,73 @@
     }
   }
 
+  function editProgressGoal(progressGoal, listItem, editButton) {
+    const inlineGoalNameInput = document.createElement('input');
+    const inlineGoalStatusSelect = document.createElement('select');
+    const saveButton = document.createElement('button');
+    const cancelButton = document.createElement('button');
+    const goalName = listItem.querySelector('h4');
+    const goalStatus = listItem.querySelector('p');
+
+    inlineGoalNameInput.type = 'text';
+    inlineGoalNameInput.value = progressGoal.name;
+    inlineGoalNameInput.setAttribute('aria-label', 'Goal/expectation name');
+    inlineGoalStatusSelect.setAttribute('aria-label', 'Goal/expectation status');
+    Array.from(goalStatusSelect.options).forEach(option => {
+      const statusOption = document.createElement('option');
+      statusOption.value = option.value;
+      statusOption.textContent = option.textContent;
+      inlineGoalStatusSelect.append(statusOption);
+    });
+    inlineGoalStatusSelect.value = progressGoal.status;
+    saveButton.type = 'button';
+    saveButton.textContent = 'Save';
+    cancelButton.type = 'button';
+    cancelButton.textContent = 'Cancel';
+
+    goalName.replaceWith(inlineGoalNameInput);
+    goalStatus.replaceWith(inlineGoalStatusSelect);
+    editButton.replaceWith(saveButton, cancelButton);
+    inlineGoalNameInput.focus();
+
+    cancelButton.addEventListener('click', renderProgressGoals);
+    saveButton.addEventListener('click', () => {
+      const trimmedGoalName = inlineGoalNameInput.value.trim();
+      if (trimmedGoalName.length === 0) {
+      goalError.textContent = 'Enter a goal or expectation name.';
+        inlineGoalNameInput.focus();
+        return;
+      }
+
+      const nextProgressTracker = {
+        goals: progressTracker.goals.map(existingGoal => (
+          existingGoal.id === progressGoal.id
+            ? { ...existingGoal, name: trimmedGoalName, status: inlineGoalStatusSelect.value }
+            : existingGoal
+        ))
+      };
+      if (!saveProgressTracker(nextProgressTracker)) return;
+
+      progressTracker = nextProgressTracker;
+      renderProgressGoals();
+      goalError.textContent = '';
+      saveError.textContent = '';
+      saveStatus.textContent = 'Goal/Expectation updated in this browser.';
+    });
+  }
+
+  function deleteProgressGoal(progressGoal) {
+    const nextProgressTracker = {
+      goals: progressTracker.goals.filter(existingGoal => existingGoal.id !== progressGoal.id)
+    };
+    if (!saveProgressTracker(nextProgressTracker)) return;
+
+    progressTracker = nextProgressTracker;
+    renderProgressGoals();
+    saveError.textContent = '';
+    saveStatus.textContent = 'Goal/Expectation deleted from this browser.';
+  }
+
   function renderProgressGoals() {
     inprogressGoalList.replaceChildren();
     completedGoalList.replaceChildren();
@@ -57,9 +124,17 @@
       const listItem = document.createElement('li');
       const goalName = document.createElement('h4');
       const goalStatus = document.createElement('p');
+      const editButton = document.createElement('button');
+      const deleteButton = document.createElement('button');
       goalName.textContent = progressGoal.name;
       goalStatus.textContent = progressGoal.status;
-      listItem.append(goalName, goalStatus);
+      editButton.type = 'button';
+      editButton.textContent = 'Edit';
+      editButton.addEventListener('click', () => editProgressGoal(progressGoal, listItem, editButton));
+      deleteButton.type = 'button';
+      deleteButton.textContent = 'Delete';
+      deleteButton.addEventListener('click', () => deleteProgressGoal(progressGoal));
+      listItem.append(goalName, goalStatus, editButton, deleteButton);
 
       const goalList = progressGoal.status === 'completed'
         ? completedGoalList
