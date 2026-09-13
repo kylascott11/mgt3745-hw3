@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-
+  
   const storageKey = 'mgt3745.progressTracker.v1';
   const goalForm = document.querySelector('#goalForm');
   const goalNameInput = document.querySelector('#goalName');
@@ -12,6 +12,7 @@
   const saveError = document.querySelector('#saveError');
   const emptyState = document.querySelector('#emptyState');
   let progressTracker = loadProgressTracker();
+  // Give each goal a unique ID so individual goals can be edited or deleted later.
   let nextGoalId = progressTracker.goals.reduce(
     (highestId, progressGoal) => Math.max(highestId, progressGoal.id),
     0
@@ -36,7 +37,7 @@
       return { goals: [] };
     }
   }
-
+// Save changes before updating the displayed state so failed saves do not appear successful.
   function saveProgressTracker(nextProgressTracker) {
     try {
       window.localStorage.setItem(storageKey, JSON.stringify(nextProgressTracker));
@@ -47,7 +48,7 @@
       return false;
     }
   }
-
+// Replace the displayed goal with temporary controls so the user can change its information.
   function editProgressGoal(progressGoal, listItem, editButton) {
     const inlineGoalNameInput = document.createElement('input');
     const inlineGoalStatusSelect = document.createElement('select');
@@ -60,6 +61,7 @@
     inlineGoalNameInput.value = progressGoal.name;
     inlineGoalNameInput.setAttribute('aria-label', 'Goal/expectation name');
     inlineGoalStatusSelect.setAttribute('aria-label', 'Goal/expectation status');
+    // Keep the editing choices consistent with the statuses available when creating a goal.
     Array.from(goalStatusSelect.options).forEach(option => {
       const statusOption = document.createElement('option');
       statusOption.value = option.value;
@@ -71,7 +73,6 @@
     saveButton.textContent = 'Save';
     cancelButton.type = 'button';
     cancelButton.textContent = 'Cancel';
-
     goalName.replaceWith(inlineGoalNameInput);
     goalStatus.replaceWith(inlineGoalStatusSelect);
     editButton.replaceWith(saveButton, cancelButton);
@@ -102,7 +103,7 @@
       saveStatus.textContent = 'Goal/Expectation updated in this browser.';
     });
   }
-
+// Create a new list without the selected goal so the deletion can be saved safely.
   function deleteProgressGoal(progressGoal) {
     const nextProgressTracker = {
       goals: progressTracker.goals.filter(existingGoal => existingGoal.id !== progressGoal.id)
@@ -126,6 +127,7 @@
       const goalStatus = document.createElement('p');
       const editButton = document.createElement('button');
       const deleteButton = document.createElement('button');
+      // Treat user-entered goal names as text rather than allowing them to be interpreted as HTML.
       goalName.textContent = progressGoal.name;
       goalStatus.textContent = progressGoal.status;
       editButton.type = 'button';
@@ -135,7 +137,7 @@
       deleteButton.textContent = 'Delete';
       deleteButton.addEventListener('click', () => deleteProgressGoal(progressGoal));
       listItem.append(goalName, goalStatus, editButton, deleteButton);
-
+// Keep completed goals separate so users can distinguish finished progress from active goals.
       const goalList = progressGoal.status === 'completed'
         ? completedGoalList
         : inProgressGoalList;
@@ -161,6 +163,7 @@
     const nextProgressTracker = { goals: [...progressTracker.goals, progressGoal] };
     if (!saveProgressTracker(nextProgressTracker)) return;
 
+    // Display saved goals immediately so the tracker is populated when the page opens.
     nextGoalId += 1;
     progressTracker = nextProgressTracker;
     renderProgressGoals();
