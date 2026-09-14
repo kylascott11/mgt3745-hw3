@@ -98,36 +98,36 @@ Status: ACTIVE. Copy and revise your own HW2 FEATURES.md here.
 
 ## 6. Acceptance
 
-- [ ] *WHEN a user begins using the program, THE SYSTEM SHALL prompt the user to identify an environment and situation.*
-- [ ] *WHEN a user selects an environment, THE SYSTEM SHALL allow the user to select or enter their current stage or situation within that environment.*
-- [ ] *WHEN a user provides an environment and situation, THE SYSTEM SHALL display expectations and resources associated with that environment and situation.*
-- [ ] *WHEN a user changes their selected environment or situation, THE SYSTEM SHALL replace the displayed expectations and resources with those associated with the new environment or situation.*
-- [ ] *WHERE a user uploads an external resource, THE SYSTEM SHALL analyze the resource to identify expectations stated for the user's selected environment.*
-- [ ] *WHEN a user identifies an environment, THE SYSTEM SHALL display expectations obtained from an identified external source or from materials uploaded by the user.*
-- [ ] *WHEN an expectation is displayed, THE SYSTEM SHALL identify the source from which the expectation was obtained.*
-- [ ] *WHEN a user selects an available source, THE SYSTEM SHALL provide access to the original source.*
-- [ ] *WHEN a user's current stage or situation is provided, THE SYSTEM SHALL display expectations identified for that stage or situation.*
-- [ ] *IF an expectation cannot be supported by an identified external source, THEN THE SYSTEM SHALL indicate that the expectation could not be established.*
-- [ ] *THE SYSTEM SHALL NOT present an unsupported claim as an established expectation.*
-- [ ] *WHEN a user creates a progress marker, THE SYSTEM SHALL display the marker in the user's progress list.*
-- [ ] *WHEN a user assigns a status to a progress marker, THE SYSTEM SHALL display that status with the marker.*
-- [ ] *WHEN a user updates a progress marker, THE SYSTEM SHALL display the updated information.*
-- [ ] *WHEN a user marks a progress marker as complete, THE SYSTEM SHALL display it as completed.*
-- [ ] *WHEN a user views their progress, THE SYSTEM SHALL display their progress without ranking it against another user's progress.*
-- [ ] *WHEN a user removes a progress marker, THE SYSTEM SHALL remove it from the user's progress list.*
-- [ ] *WHEN a user identifies an expectation they do not understand or have not yet met, THE SYSTEM SHALL display resources associated with that expectation when such resources exist.*
-- [ ] *WHEN an external resource is displayed, THE SYSTEM SHALL identify its source.*
-- [ ] *WHEN a user selects an available external resource, THE SYSTEM SHALL provide access to the original resource.*
-- [ ] *IF no relevant resource is found, THEN THE SYSTEM SHALL indicate that no matching resource was found.*
-- [ ] *WHEN a user's environment or situation changes, THE SYSTEM SHALL replace the displayed resources with resources associated with the new environment or situation.*
-- [ ] *WHEN a user chooses to view other experiences, THE SYSTEM SHALL display anonymous experiences associated with the user's selected environment or situation when such experiences exist.*
-- [ ] *WHEN a user submits an experience anonymously, THE SYSTEM SHALL not display the user's name with that experience.*
-- [ ] *WHEN anonymous experiences are displayed, THE SYSTEM SHALL identify the situation or environment associated with each experience when that information is available.*
-- [ ] *IF no anonymous experiences are associated with the user's selected environment or situation, THEN THE SYSTEM SHALL indicate that no matching experiences are currently available.*
-- [ ] *THE SYSTEM SHALL NOT display a leaderboard of users.*
-- [ ] *THE SYSTEM SHALL NOT assign a user a performance rank based on another user's performance.*
-- [ ] *WHEN a user views general expectations or resources, THE SYSTEM SHALL not require the user to provide identifying information.*
-- [ ] *WHEN a user submits an anonymous experience, THE SYSTEM SHALL not display personally identifying information with the experience.*
+- [ ] **A - 01:** *WHEN a user begins using the program, THE SYSTEM SHALL prompt the user to identify an environment and situation.*
+- [ ] **A - 02:** *WHEN a user selects an environment, THE SYSTEM SHALL allow the user to select or enter their current stage or situation within that environment.*
+- [ ] **A - 03:** *WHEN a user provides an environment and situation, THE SYSTEM SHALL display expectations and resources associated with that environment and situation.*
+- [ ] **A - 04:** *WHEN a user changes their selected environment or situation, THE SYSTEM SHALL replace the displayed expectations and resources with those associated with the new environment or situation.*
+- [ ] **A - 05:** *WHERE a user uploads an external resource, THE SYSTEM SHALL analyze the resource to identify expectations stated for the user's selected environment.*
+- [ ] **A - 06:** *WHEN a user identifies an environment, THE SYSTEM SHALL display expectations obtained from an identified external source or from materials uploaded by the user.*
+- [ ] **A - 07:** *WHEN an expectation is displayed, THE SYSTEM SHALL identify the source from which the expectation was obtained.*
+- [ ] **A - 08:** *WHEN a user selects an available source, THE SYSTEM SHALL provide access to the original source.*
+- [ ] **A - 09:** *WHEN a user's current stage or situation is provided, THE SYSTEM SHALL display expectations identified for that stage or situation.*
+- [ ] **A - 10:** *IF an expectation cannot be supported by an identified external source, THEN THE SYSTEM SHALL indicate that the expectation could not be established.*
+- [ ] **A - 11:** *THE SYSTEM SHALL NOT present an unsupported claim as an established expectation.*
+- [ ] **A - 12:** *WHEN a user creates a progress marker, THE SYSTEM SHALL display the marker in the user's progress list.*
+- [ ] **A - 13:** *WHEN a user assigns a status to a progress marker, THE SYSTEM SHALL display that status with the marker.*
+- [ ] **A - 14:** *WHEN a user updates a progress marker, THE SYSTEM SHALL display the updated information.*
+- [ ] **A - 15:** *WHEN a user marks a progress marker as complete, THE SYSTEM SHALL display it as completed.*
+- [ ] **A - 16:** *WHEN a user views their progress, THE SYSTEM SHALL display their progress without ranking it against another user's progress.*
+- [ ] **A - 17:** *WHEN a user removes a progress marker, THE SYSTEM SHALL remove it from the user's progress list.*
+- [ ] **A - 18:** *WHEN a user identifies an expectation they do not understand or have not yet met, THE SYSTEM SHALL display resources associated with that expectation when such resources exist.*
+- [ ] **A - 19:** *WHEN an external resource is displayed, THE SYSTEM SHALL identify its source.*
+- [ ] **A - 20:** *WHEN a user selects an available external resource, THE SYSTEM SHALL provide access to the original resource.*
+- [ ] **A - 21:** *IF no relevant resource is found, THEN THE SYSTEM SHALL indicate that no matching resource was found.*
+- [ ] **A - 22:** *WHEN a user's environment or situation changes, THE SYSTEM SHALL replace the displayed resources with resources associated with the new environment or situation.*
+- [ ] **A - 23:** *WHEN a user chooses to view other experiences, THE SYSTEM SHALL display anonymous experiences associated with the user's selected environment or situation when such experiences exist.*
+- [ ] **A - 24:** *WHEN a user submits an experience anonymously, THE SYSTEM SHALL not display the user's name with that experience.*
+- [ ] **A - 25:** *WHEN anonymous experiences are displayed, THE SYSTEM SHALL identify the situation or environment associated with each experience when that information is available.*
+- [ ] **A - 26:** *IF no anonymous experiences are associated with the user's selected environment or situation, THEN THE SYSTEM SHALL indicate that no matching experiences are currently available.*
+- [ ] **A - 27:** *THE SYSTEM SHALL NOT display a leaderboard of users.*
+- [ ] **A - 28:** *THE SYSTEM SHALL NOT assign a user a performance rank based on another user's performance.*
+- [ ] **A - 29:** *WHEN a user views general expectations or resources, THE SYSTEM SHALL not require the user to provide identifying information.*
+- [ ] **A - 30:** *WHEN a user submits an anonymous experience, THE SYSTEM SHALL not display personally identifying information with the experience.*
 
 **Keep your dated Kano hypotheses and selected feature. Use IDs to connect evidence, jobs, and criteria. Clearly distinguish the one-feature HW3 implementation from the larger product scope.**
 
