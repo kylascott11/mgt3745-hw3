@@ -148,8 +148,8 @@ Status: ACTIVE. Copy and revise your own HW2 FEATURES.md here.
 ### Not Applicable to HW3 Feature:
 | Criterion | Steps and input | Expected result | Observed result | Status | Evidence / commit |
 |---|---|---|---|---|---|
-| A - 01 | Open the program. | The system prompts the user to identify an environment and situation. | The current page opens directly to the progress-marker tracker and does not prompt the user to identify an environment or situation. | CANNOT TEST YET | [commit/link] |
-| A - 02 | Select an environment. | The system allows the user to select or enter their current stage or situation. | The current page does not provide an environment-selection feature. | CANNOT TEST YET | [commit/link] |
+| A - 01 | Open the program. | The system prompts the user to identify an environment and situation. | The current page opens directly to the progress-marker tracker and does not prompt the user to identify an environment or situation. | FAIL| [commit/link] |
+| A - 02 | Select an environment. | The system allows the user to select or enter their current stage or situation. | The current page does not provide an environment-selection feature. | FAIL| [commit/link] |
 | A - 03 | Provide an environment and situation. | Expectations and resources associated with the environment and situation are displayed. | The current page does not provide an environment or situation input or display expectations and resources. | CANNOT TEST YET | [commit/link] |
 | A - 04 | Change the selected environment or situation. | The displayed expectations and resources are replaced with those associated with the new environment or situation. | The current page does not provide an environment or situation selection that can be changed. | CANNOT TEST YET | [commit/link] |
 | A - 05 | Attempt to upload an external resource. | The system analyzes the resource to identify expectations for the selected environment. | The current page does not provide an external-resource upload feature. | CANNOT TEST YET | [commit/link] |
