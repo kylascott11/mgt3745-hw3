@@ -163,7 +163,7 @@
     const nextProgressTracker = { goals: [...progressTracker.goals, progressGoal] };
     if (!saveProgressTracker(nextProgressTracker)) return;
 
-    // Display saved goals immediately so the tracker is populated when the page opens.
+  // Update the saved state before rendering so the page reflects the newly saved marker.
     nextGoalId += 1;
     progressTracker = nextProgressTracker;
     renderProgressGoals();
