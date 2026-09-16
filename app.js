@@ -149,7 +149,7 @@
     event.preventDefault();
     const goalName = goalNameInput.value.trim();
     if (goalName.length === 0) {
-      goalError.textContent = 'Enter a description for your goal or expectation.';
+      goalError.textContent = 'Enter a description/name for your goal or expectation.';
       goalNameInput.setAttribute('aria-invalid', 'true');
       goalNameInput.focus();
       return;
