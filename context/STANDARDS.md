@@ -1,6 +1,6 @@
 # Standards
 
-Status: ACTIVE in Module 3. Adapt these rules to your feature and follow them.
+Status: ACTIVE in Module 3. 
 
 1. **Naming:** *Use descriptive camelCase identifiers. Short conventional event/index names are acceptable when their role is obvious; avoid unnecessary abbreviations. Use names that clearly describe what the variable or function represents.*
 2. **Structure:** *Separate HTML, CSS, and JavaScript into index.html, styles.css, and app.js. Use lexical scope; do not create accidental global variables.*

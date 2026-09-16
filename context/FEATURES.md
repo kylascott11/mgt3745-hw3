@@ -1,6 +1,6 @@
 # Features and specification
 
-Status: ACTIVE. Copy and revise your own HW2 FEATURES.md here.
+Status: ACTIVE. 
 
 ## Kano-Classified Feature List
 
@@ -33,25 +33,28 @@ Status: ACTIVE. Copy and revise your own HW2 FEATURES.md here.
 
 ## 3. Scope
 
-**This does:**
+*Scope statements that are **bolded** are applicable to HW3.*
+### This does:
 - *Identify expectations for their current environment.*
-- *Record and display their progress toward those expectations.*
+- ***Record and display their progress toward those expectations.***
 - *Access resources relevant to their current expectations or areas of improvement.*
 - *View experiences from other people in similar situations without using those experiences as performance standards.*
 
-**This deliberately does not do:**
-- *Determine whether a user is successful or unsuccessful.*
-- *Rank users against other individuals.*
-- *Tell users how they should feel about their performance.*
-- *Guarantee that users will feel more confident or that feelings of imposter syndrome will disappear.*
-- *Use generic encouragement as evidence that a user is meeting expectations.*
+### This deliberately does not do:
+- ***Determine whether a user is successful or unsuccessful.***
+- ***Rank users against other individuals.***
+- ***Tell users how they should feel about their performance.***
+- ***Guarantee that users will feel more confident or that feelings of imposter syndrome will disappear.***
+- ***Use generic encouragement as evidence that a user is meeting expectations.***
 
 ---
 
 ## 4. Behavior
 
+***Bolded** steps are applicable to HW3.*
+
 ***1:** Identify the user's situation*
-- *1. When a user begins using the program, the system shall prompt the user to identify the environment and situation they want to evaluate.*
+- ***1. When a user begins using the program, the system shall prompt the user to identify the environment and situation they want to evaluate.***
 - *2. The system shall allow the user to select an environment such as school, work, training, or another relevant environment.*
 - *3. The system shall allow the user to provide additional information about their current stage or situation within that environment.*
 - *4. The system shall use the selected environment and situation to determine which expectations and resources to display.*
@@ -65,11 +68,11 @@ Status: ACTIVE. Copy and revise your own HW2 FEATURES.md here.
 - *6. If reliable information about an expectation is not available, it should indicate that the expectation could not be established.*
 
 ***3:** Track personal progress*
-- *1. When expectations are displayed, the system shall allow the user to create personal progress markers related to those expectations.*
-- *2. Each progress marker shall include a description and a user-selected status.*
-- *3. The user shall be allowed update the status of a progress marker.*
-- *4. The system shall display completed and incomplete progress markers separately.*
-- *5. The system shall not compare the user's progress markers with another user's progress.*
+- ***1. When expectations are displayed, the system shall allow the user to create personal progress markers related to those expectations.***
+- ***2. Each progress marker shall include a description and a user-selected status.***
+- ***3. The user shall be allowed update the status of a progress marker.***
+- ***4. The system shall display completed and incomplete progress markers separately.***
+- ***5. The system shall not compare the user's progress markers with another user's progress.***
 
 ***4:** Provide personalized resources*
 - *1. When a user identifies an expectation they do not understand or have not yet met, the system shall display resources associated with that expectation when such resources exist.*
@@ -85,8 +88,8 @@ Status: ACTIVE. Copy and revise your own HW2 FEATURES.md here.
 - *4. The user shall be able to choose whether to view other users' experiences.*
 
 ***6:** Benchmarking*
-- *1. The program shall not display leaderboards or rankings of users.*
-- *2. The program shall not calculate a user's rank relative to other users.*
+- ***1. The program shall not display leaderboards or rankings of users.***
+- ***2. The program shall not calculate a user's rank relative to other users.***
 - *3. When presenting information about other people's experiences, the program shall emphasize differences in experiences rather than rank users by performance.*
 - *4. If benchmark information is provided, it shall describe environmental expectations or requirements rather than individual user rankings.*
 
@@ -170,5 +173,3 @@ Status: ACTIVE. Copy and revise your own HW2 FEATURES.md here.
 | A - 24 | Submit an experience anonymously. | The system does not display the user's name with the experience. | The current page does not provide an experience-submission feature. | CANNOT TEST YET | Not testable because anonymous user experiences are outside the HW3  scope. |
 | A - 25 | View anonymous experiences. | The system identifies the situation or environment associated with each experience when available. | The current page does not provide an anonymous-experience feature. | CANNOT TEST YET | Not testable because anonymous user experiences are outside the HW3  scope. |
 | A - 30 | Submit an anonymous experience. | The system does not display personally identifying information with the experience. | The current page does not provide an anonymous-experience submission feature. | CANNOT TEST YET | Not testable because anonymous user experiences are outside the HW3  scope. |
-
-Cover a normal action, relevant invalid input, and persistence or failure. Classify unselected requirements separately. Record actual outcomes; all-PASS is acceptable with evidence.

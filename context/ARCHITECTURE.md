@@ -54,4 +54,3 @@ Status: ACTIVE in Module 3.
 - **Harder:** *difficulty inspecting the code, especially if the code requires debugging; does not guarantee that all acceptance criteria will be met*
 - **Revisit:** *Module 4, when a database becomes available; if the architecture changes, write ADR-002 and supersede this decision*
 
-Keep superseded ADRs. The pedagogical browser build can coexist with a different architecture recommendation; explain the distinction.
