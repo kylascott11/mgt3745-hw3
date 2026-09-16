@@ -134,8 +134,6 @@ Status: ACTIVE.
 - [ ] **A - 29:** *WHEN a user views general expectations or resources, THE SYSTEM SHALL not require the user to provide identifying information.*
 - [ ] **A - 30:** *WHEN a user submits an anonymous experience, THE SYSTEM SHALL not display personally identifying information with the experience.*
 
-**Keep your dated Kano hypotheses and selected feature. Use IDs to connect evidence, jobs, and criteria. Clearly distinguish the one-feature HW3 implementation from the larger product scope.**
-
 ## Verification
 ### Applicable to HW3 Feature:
 | Criterion | Steps and input | Expected result | Observed result | Status | Evidence / commit |
