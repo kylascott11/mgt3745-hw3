@@ -16,8 +16,13 @@
       <form id="goalForm" novalidate>
         <label for="goalName">Goal/Expectation Name</label>
         <p id="goalError" role="alert" aria-live="assertive"></p>
-        <input id="goalName" name="goalName" type="text" aria-describedby="goalNameHelp goalError" autocomplete="off">
         <p id="goalNameHelp">Enter a short description of something you are working toward.</p>
+        <input id="goalName" name="goalName" type="text" aria-describedby="goalNameHelp goalError" autocomplete="off">
+
+        <label for="goalPercentage">Percentage Complete</label>
+        <p id="percentageError" role="alert" aria-live="assertive"></p>
+        <p id="goalPercentageHelp">Enter the starting percentage of completion for this goal/expectation.</p>
+        <input id="goalPercentage" name="goalPercentage" type="number" min="0" max="100" step="1" value="0" aria-describedby="goalError">
 
         <label for="goalStatus">Status</label>
         <select id="goalStatus" name="goalStatus" aria-describedby="goalError">
@@ -36,6 +41,11 @@
     <section aria-labelledby="progressHeading">
       <h2 id="progressHeading">Your Progress</h2>
       <p id="emptyState">No goals/expectations set yet.</p>
+
+      <section aria-labelledby="notStartedHeading">
+        <h3 id="notStartedHeading">Not Started</h3>
+        <ul id="notStartedGoalList" aria-label="Not started goals/expectations"></ul>
+      </section>
 
       <section aria-labelledby="inProgressHeading">
         <h3 id="inProgressHeading">In Progress</h3>
