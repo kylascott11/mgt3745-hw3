@@ -132,6 +132,7 @@ Status: ACTIVE. Copy and revise your own HW2 FEATURES.md here.
 **Keep your dated Kano hypotheses and selected feature. Use IDs to connect evidence, jobs, and criteria. Clearly distinguish the one-feature HW3 implementation from the larger product scope.**
 
 ## Verification
+### Applicable to HW3 Feature:
 | Criterion | Steps and input | Expected result | Observed result | Status | Evidence / commit |
 |---|---|---|---|---|---|
 | A - 12 | Enter goal/expectation, select status, and click "Add progress marker." | The system displays the marker in the user's in progress list. | The progress marker appeared in the In Progress list after submission. If I were to have selected Completed as the status, it would have populated there.| PASS | [commit/link] |
@@ -144,7 +145,7 @@ Status: ACTIVE. Copy and revise your own HW2 FEATURES.md here.
 | A - 28 | Review the progress page for a performance ranking based on another user. | The system does not assign a user a performance rank based on another user's performance. | The progress page does not assign or display performance rankings. | PASS | [commit/link] |
 | A - 29 | Open and use the general progress-tracking page without entering identifying information. | The system does not require identifying information. | I can create and view my exepctations/goals without providing identifying information. | PASS | [commit/link] |
 
-
+### Not Applicable to HW3 Feature:
 | Criterion | Steps and input | Expected result | Observed result | Status | Evidence / commit |
 |---|---|---|---|---|---|
 | A - 01 | Open the program. | The system prompts the user to identify an environment and situation. | The current page opens directly to the progress-marker tracker and does not prompt the user to identify an environment or situation. | CANNOT TEST YET | [commit/link] |
