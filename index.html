@@ -16,6 +16,7 @@
       <h2 id="createGoalHeading">Create a Goal/Expectation</h2>
       <form id="goalForm" novalidate>
         <label for="goalName">Goal/Expectation Name</label>
+        <p id="goalError" role="alert" aria-live="assertive"></p>
         <input id="goalName" name="goalName" type="text" aria-describedby="goalNameHelp goalError" autocomplete="off">
         <p id="goalNameHelp">Enter a short description of something you are working toward.</p>
 
@@ -27,7 +28,6 @@
         </select>
 
         <button type="submit">Add goal/expectation</button>
-        <p id="goalError" role="alert" aria-live="assertive"></p>
       </form>
     </section>
 

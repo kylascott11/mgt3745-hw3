@@ -82,7 +82,7 @@
     saveButton.addEventListener('click', () => {
       const trimmedGoalName = inlineGoalNameInput.value.trim();
       if (trimmedGoalName.length === 0) {
-      goalError.textContent = 'Enter a goal or expectation name.';
+      goalError.textContent = 'Remember to enter a goal or expectation name.';
         inlineGoalNameInput.focus();
         return;
       }
@@ -149,7 +149,7 @@
     event.preventDefault();
     const goalName = goalNameInput.value.trim();
     if (goalName.length === 0) {
-      goalError.textContent = 'Enter a goal or expectation name.';
+      goalError.textContent = 'Enter a description for your goal or expectation.';
       goalNameInput.setAttribute('aria-invalid', 'true');
       goalNameInput.focus();
       return;
