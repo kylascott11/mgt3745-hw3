@@ -132,9 +132,40 @@ Status: ACTIVE. Copy and revise your own HW2 FEATURES.md here.
 **Keep your dated Kano hypotheses and selected feature. Use IDs to connect evidence, jobs, and criteria. Clearly distinguish the one-feature HW3 implementation from the larger product scope.**
 
 ## Verification
+| Criterion | Steps and input | Expected result | Observed result | Status | Evidence / commit |
+|---|---|---|---|---|---|
+| A - 12 | Enter goal/expectation, select status, and click "Add progress marker." | The system displays the marker in the user's in progress list. | The progress marker appeared in the In Progress list after submission. If I were to have selected Completed as the status, it would have populated there.| PASS | [commit/link] |
+| A - 13 | Create a goal and select a status. | The system displays the selected status with the goal. | I selected Completed, and the goal displayed as completed. | PASS | [commit/link] |
+| A - 14 | Select "Edit" on an existing goal, change the name, and select "Save." | The system displays the updated information. | The updated goal name appeared after saving. | PASS | [commit/link] |
+| A - 15 | Select "Mark complete" on an in-progress goal. | The system displays the goal as completed. | The system shows the goal under the completed section.| PASS| [commit/link] |
+| A - 16 | View the progress list containing multiple goals. | The system displays the user's progress without ranking it against another user's progress. | The page displayed the user's progress markers without rankings or comparisons to other users. | PASS | [commit/link] |
+| A - 17 | Select "Delete" on an existing goal. | The system removes the goal from the user's progress list. | The selected goal was removed from the list. | PASS | [commit/link] |
+| A - 27 | Review the progress page for rankings or leaderboards. | The system does not display a leaderboard of users. | The progress page does not display a leaderboard. | PASS | This is not applicable to my chosen feature because this was meant for dicussion/personalized content features. |
+| A - 28 | Review the progress page for a performance ranking based on another user. | The system does not assign a user a performance rank based on another user's performance. | The progress page does not assign or display performance rankings. | PASS | [commit/link] |
+| A - 29 | Open and use the general progress-tracking page without entering identifying information. | The system does not require identifying information. | I can create and view my exepctations/goals without providing identifying information. | PASS | [commit/link] |
+
 
 | Criterion | Steps and input | Expected result | Observed result | Status | Evidence / commit |
 |---|---|---|---|---|---|
-| Your selected ID | Reproducible procedure | Before running | Actual observation | PASS / FAIL / CANNOT TEST / DEFERRED | Link |
+| A - 01 | Open the program. | The system prompts the user to identify an environment and situation. | The current page opens directly to the progress-marker tracker and does not prompt the user to identify an environment or situation. | CANNOT TEST YET | [commit/link] |
+| A - 02 | Select an environment. | The system allows the user to select or enter their current stage or situation. | The current page does not provide an environment-selection feature. | CANNOT TEST YET | [commit/link] |
+| A - 03 | Provide an environment and situation. | Expectations and resources associated with the environment and situation are displayed. | The current page does not provide an environment or situation input or display expectations and resources. | CANNOT TEST YET | [commit/link] |
+| A - 04 | Change the selected environment or situation. | The displayed expectations and resources are replaced with those associated with the new environment or situation. | The current page does not provide an environment or situation selection that can be changed. | CANNOT TEST YET | [commit/link] |
+| A - 05 | Attempt to upload an external resource. | The system analyzes the resource to identify expectations for the selected environment. | The current page does not provide an external-resource upload feature. | CANNOT TEST YET | [commit/link] |
+| A - 06 | Identify an environment. | The system displays expectations from an identified external source or uploaded materials. | The current page does not provide an environment-selection feature or display external expectations. | CANNOT TEST YET | [commit/link] |
+| A - 07 | Display an expectation. | The system identifies the source of the expectation. | The current page does not display environment expectations or their sources. | CANNOT TEST YET | [commit/link] |
+| A - 08 | Select an available source. | The system provides access to the original source. | The current page does not display external sources. | CANNOT TEST YET | [commit/link] |
+| A - 09 | Provide a current stage or situation. | The system displays expectations identified for that stage or situation. | The current page does not provide a stage or situation input or display expectations. | CANNOT TEST YET | [commit/link] |
+| A - 10 | View an expectation that cannot be supported by an identified external source. | The system indicates that the expectation could not be established. | The current page does not establish or display external expectations. | CANNOT TEST YET | [commit/link] |
+| A - 11 | Attempt to display an unsupported expectation. | The system does not present an unsupported claim as an established expectation. | The current page does not establish or display environment expectations. | CANNOT TEST YET | [commit/link] |
+| A - 18 | Identify an expectation that is not understood or has not been met. | The system displays associated resources when they exist. | The current page does not provide expectations or personalized resources. | CANNOT TEST YET | [commit/link] |
+| A - 19 | Display an external resource. | The system identifies the resource's source. | The current page does not display external resources. | CANNOT TEST YET | [commit/link] |
+| A - 20 | Select an available external resource. | The system provides access to the original resource. | The current page does not display external resources. | CANNOT TEST YET | [commit/link] |
+| A - 21 | Search for a resource when no relevant resource exists. | The system indicates that no matching resource was found. | The current page does not provide a resource-search feature. | CANNOT TEST YET | [commit/link] |
+| A - 22 | Change the user's environment or situation. | The system replaces the displayed resources with resources associated with the new environment or situation. | The current page does not provide environment or situation selection or personalized resources. | CANNOT TEST YET | [commit/link] |
+| A - 23 | Choose to view other users' experiences. | The system displays anonymous experiences associated with the selected environment or situation when available. | The current page does not provide an anonymous-experience feature. | CANNOT TEST YET | [commit/link] |
+| A - 24 | Submit an experience anonymously. | The system does not display the user's name with the experience. | The current page does not provide an experience-submission feature. | CANNOT TEST YET | [commit/link] |
+| A - 25 | View anonymous experiences. | The system identifies the situation or environment associated with each experience when available. | The current page does not provide an anonymous-experience feature. | CANNOT TEST YET | [commit/link] |
+| A - 30 | Submit an anonymous experience. | The system does not display personally identifying information with the experience. | The current page does not provide an anonymous-experience submission feature. | CANNOT TEST YET | [commit/link] |
 
 Cover a normal action, relevant invalid input, and persistence or failure. Classify unselected requirements separately. Record actual outcomes; all-PASS is acceptable with evidence.
