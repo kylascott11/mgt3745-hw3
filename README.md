@@ -16,6 +16,8 @@ This Progress Tracker is designed to help users determine whether they are doing
 ## See It Work
 The editable progress markers feature allows users to create a goal, assign a percentage complete, edit the status/goal, and remove it. In-progress markers are automatically ordered from the highest percentage complete to the lowest. If the assigned percentage is 0%, it gets moved to not started. Similarily, if the assigned percentage is 100%, the goal gets moved to the completed list. 
 
+The following GIF explicates Acceptance Criterior A - 12:
+
 <!-- REQUIRED: at least one image or GIF of the feature meeting an EARS statement.
      Put media in the docs/ folder. Keep GIFs under 5 MB.
      Record: macOS Cmd+Shift+5, Windows Win+Alt+R or Snipping Tool video. Convert at ezgif.com.
@@ -27,8 +29,6 @@ Put a screenshot or GIF under docs/ and link it here with descriptive alt text. 
 <!-- <img src="docs/screenshot.png" width="480" alt="The entry list after three saves"> -->
 
 ## How to Run
-
-Create your repository from the instructor's HW3 template and name it `mgt3745-hw3`. The supplied app is a starter; adapt it to one feature from your own specification.
 This project runs inside a GitHub Codespace. No local install.
 
 1. On your repository page, click **Code → Codespaces → Create codespace on main**. Wait for setup to finish; first-boot time varies.
@@ -38,30 +38,23 @@ This project runs inside a GitHub Codespace. No local install.
 
 If Live Server is unavailable, run `node scripts/serve.mjs` in the terminal, then open port 5500 from the Ports tab. Refresh the browser after edits when using this fallback; stop it with **Ctrl+C**. Run only one server on port 5500 at a time. The fallback also works locally with Node 22 or later. Serve over HTTP rather than opening `index.html` through `file://`.
 
-<!-- The .devcontainer folder installs Live Server automatically. If the right-click option
-     is missing, wait for the extension to finish installing (bottom-left status bar), or run
-     `python3 -m http.server 5500` in the terminal and open port 5500 from the Ports tab.
-     Edit these steps if your feature needs anything more. -->
-
 ## How It Works
-
-<!-- GitHub renders Mermaid natively inside a ```mermaid fence. -->
 
 ```mermaid
 flowchart TD
- A[Page opens] --> B[loadNotes: read and validate localStorage]
-  B --> C[renderNotes: draw current state]
-  D[User submits entry] --> E{Trimmed input is 1 to 200 characters?}
+ A[Page opens] --> B[loadProgressTracker: read and validate localStorage]
+  B --> C[renderProgressGoals: draw current state]
+  D[User submits expectation/goal] --> E{Valid name and whole percentage number from 0 to 100?}
   E -->|No| F[Show validation error and keep input]
-  E -->|Yes| G[Create proposed notes array]
-  G --> H{saveNotes: storage write succeeds?}
+  E -->|Yes| G[Create goal/expectation]
+  G --> H{saveProgressTracker: storage write succeeds?}
   H -->|No| I[Show save error; keep input and current list]
   H -->|Yes| J[Update in-memory notes]
-  J --> K[renderNotes: redraw list]
-  K --> L[Clear input and announce saved]
+  J --> K[Sort in-progress markers by percentage complete]
+  K --> M[Clear input and announce saved]
 ```
 
-This diagram describes the starter's load-and-add flow. Update it to match your implementation. In `app.js`, `loadNotes` reads stored data, `saveNotes` attempts to persist a proposed state, and `renderNotes` draws the current state using `textContent` for user text. The submit handler validates input and updates the visible state only after a successful save. Delete also saves the proposed state before redrawing. A read failure shows a warning and starts with an empty in-memory list; it leaves the original storage unchanged until a successful new save replaces it.
+This diagram describes the Progress Tracker's load-and-add flow. In `app.js`, `loadProgressTracker` reads and validates stored data, `getProgressStatus` determines whether a marker is in progress or completed based on its percentage, and `updateStatusOptions` keeps the available status choices consistent with the percentage entered. `editProgressGoal` and `deleteProgressGoal` add edit and delete functionalities, respectively. `renderProgressGoals` displays the current goals and separates them into not-started, in-progress, and completed sections, while also ordering in-progress markers from highest to lowest percentage complete. The submit handler validates input, creates the goal, saves it, and updates displayed content. 
 
 ## Status
 
