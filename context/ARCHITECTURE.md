@@ -31,7 +31,7 @@ Status: ACTIVE in Module 3.
 | Switching cost | 3| 4| 2| 4|
 | Fit to spec | 5| 4| 4| 4|
 
-#### Totals:
+### Totals:
 1. **Hand-built option:** 88
 2. **Existing-service option:** 88
 3. **AI-Assisted build:** 94
