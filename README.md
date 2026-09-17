@@ -86,19 +86,17 @@ The scaffold has **eleven canonical files in `/context`: six active files above 
 
 <!-- A Delegation Decision Record without the name. From HW5 this becomes a formal DDR. -->
 
-**Tool and task delegated:** [Which parts a tool drafted: e.g. "Copilot drafted render() and the CSS."]
+**Tool and task delegated:** *AI assistance drafted and revised the implementation of the editable progress-marker feature, including creating, editing, deleting, sorting, validating, and persisting progress markers. Once I understood the structure of the functions and when to edit `app.js` versus `index.html`, I had an easier time going in and changing the input to produce my desireable output--for example, creating the percentageError message and where I wanted it to appear.*
 
-**Why:** [The reason it made sense to delegate that part rather than write it.]
+**Why:** *I delegated the implementation because this project would have taken me days instead of hours to write the entire code I desired for this feature. Additionally, having an agent's help in the beginning made the editing and review process much more seamless to make sure the function fit the spec.*
 
-**How it was checked:** [What you inspected, what you changed, what you caught. "Replaced innerHTML with textContent" is the kind of sentence that belongs here.]
+**How it was checked:** *I reviewed the generated code against `FEATURES.md` and `STANDARDS.md`, tested each acceptance criteria (including the 30 I had before adjusting to HW2 feedback, though many were unable to be tested yet), and revised the implementation when tests failed. In particular, I added validation for invalid percentage input and corrected the logic so that a marker at 100% moves to the Completed section and a marker at 0% moves to the Not Started section. After each code implementation, I would check the live page to make sure the output was what I desired. I also checked all identifiers to make sure they followed camelCase naming. Everything also seemed to be in lexical scope*
 
-**Observed result / evidence:** [What the checks actually showed; link the relevant verification row, code change, or other evidence. Do not invent a run.]
+**Observed result / evidence:** *A - 02 and A - 07 initially failed during testing and passed after revision. The complete testing record is documented in the [Verification section of FEATURES.md](context/FEATURES.md#verification) and video/screenshot evidence of the working product can be found in the [Status section of this page](README.md#status).*
 
-If no AI assistance was used, say so and describe your independent check. Full Delegation Decision Records begin at HW5; this lightweight record is sufficient here.
+**Instruction discovery and compliance:** *The AI tool (GitHub Copilot) was used in AI-assisted mode and discovered the applicable project instructions in `CLAUDE.md`, including the coding standards in `STANDARDS.md` and the selected requirements in `FEATURES.md`. The tool demonstrated this by stating, "I’ll read the two required context documents first, then inspect the current `index.html` and replace only its interface structure. I’ll keep the result HTML-only and validate the scaffold without touching CSS, JavaScript, or other files." I manually reviewed the generated changes for compliance with the standards, including descriptive camelCase naming, separation of HTML/CSS/JavaScript, and the prohibition on inline styles and `innerHTML` with user input. Some changes did not fully follow the naming standard, as shown by the casing of `inProgressGoalList` in [this commit](https://github.com/kylascott11/mgt3745-hw3/commit/06b93ecb310d16b9fa05f535a5b8a5491f66e56f).*
 
-**Instruction discovery and compliance:** [Record the tool and mode, which instruction adapter it discovered, and the reference or diagnostic evidence. Separately report whether one generated change followed the applicable standards. If no live AI tool is available, write “not run” and record a manual standards review.]
-
-**Actual hours on this assignment (optional):** [A number, if you choose to report it. The amount or omission does not affect points; the AI-use record does.]
+**Actual hours on this assignment (optional):** *I did not time the amount spent, but if I had to estimate, I'd say I worked on it for anywhere from 1-4 hours a day across 6 days. If I had to guess, I'd say I probably spent around 10 hours.
 
 ## Explain, Change, Verify
 
