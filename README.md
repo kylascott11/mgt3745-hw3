@@ -54,10 +54,10 @@ This diagram describes the Progress Tracker's load-and-add flow. In `app.js`, `l
 |------|-------|-----|
 | Create and display progress markers | Works | [Tested by creating a marker and confirming it appears in the progress list.](docs/a-01.gif) |
 | Percentage complete | Works | [Tested with valid percentage values (whole number from 0-100) and confirmed the percentage is displayed with the marker.](docs/a-01.gif) |
-| Rank in-progress tasks | Works | [Tested with multiple markers at different percentages and confirmed they are ordered from highest to lowest.](.md) |
-| Edit progress markers | Works | [Tested by changing a marker's name, status, and percentage.](context/FEATURES.md) |
-| Remove progress markers | Works | [Tested by deleting a marker and confirming it is removed from the list.](context/FEATURES.md) |
-| Invalid percentage input | Works | [Tested with values outside the allowed 0–100 range or goals with no text input.](context/FEATURES.md) |
+| Rank in-progress tasks | Works | [Tested with multiple markers at different percentages and confirmed they are ordered from highest to lowest.](docs/percentageRanking.png) |
+| Edit progress markers | Works | [Tested by changing a marker's name, status, and percentage.](docs/editTest.gif) |
+| Remove progress markers | Works | [Tested by deleting a marker and confirming it is removed from the list.](docs/deleteTest.gif) |
+| Invalid percentage input | Works | [Tested with values outside the allowed 0–100 range or goals with no text input.](docs/errorMessage.png) |
 | Data survives reload | Works | [Tested by closing out the program and then clicking Go Live after.](docs/dataReload.gif) |
 | Multi-user sync | Deferred | [Browser-local storage does not provide multi-user synchronization: ADR-001](context/ARCHITECTURE.md) |
 
