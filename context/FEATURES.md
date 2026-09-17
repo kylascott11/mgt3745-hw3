@@ -102,72 +102,33 @@ Status: ACTIVE.
 ---
 
 ## 6. Acceptance
+- [ ] **A - 01:** WHEN a user submits a goal/expectation with a non-empty name and a whole-number percentage from 0 to 100, THE SYSTEM SHALL add the goal/expectation to the progress tracker and display the entered name and percentage.
 
-- [ ] **A - 01:** *WHEN a user begins using the program, THE SYSTEM SHALL prompt the user to identify an environment and situation.*
-- [ ] **A - 02:** *WHEN a user selects an environment, THE SYSTEM SHALL allow the user to select or enter their current stage or situation within that environment.*
-- [ ] **A - 03:** *WHEN a user provides an environment and situation, THE SYSTEM SHALL display expectations and resources associated with that environment and situation.*
-- [ ] **A - 04:** *WHEN a user changes their selected environment or situation, THE SYSTEM SHALL replace the displayed expectations and resources with those associated with the new environment or situation.*
-- [ ] **A - 05:** *WHERE a user uploads an external resource, THE SYSTEM SHALL analyze the resource to identify expectations stated for the user's selected environment.*
-- [ ] **A - 06:** *WHEN a user identifies an environment, THE SYSTEM SHALL display expectations obtained from an identified external source or from materials uploaded by the user.*
-- [ ] **A - 07:** *WHEN an expectation is displayed, THE SYSTEM SHALL identify the source from which the expectation was obtained.*
-- [ ] **A - 08:** *WHEN a user selects an available source, THE SYSTEM SHALL provide access to the original source.*
-- [ ] **A - 09:** *WHEN a user's current stage or situation is provided, THE SYSTEM SHALL display expectations identified for that stage or situation.*
-- [ ] **A - 10:** *IF an expectation cannot be supported by an identified external source, THEN THE SYSTEM SHALL indicate that the expectation could not be established.*
-- [ ] **A - 11:** *THE SYSTEM SHALL NOT present an unsupported claim as an established expectation.*
-- [ ] **A - 12:** *WHEN a user creates a progress marker, THE SYSTEM SHALL display the marker in the user's progress list.*
-- [ ] **A - 13:** *WHEN a user assigns a status to a progress marker, THE SYSTEM SHALL display that status with the marker.*
-- [ ] **A - 14:** *WHEN a user updates a progress marker, THE SYSTEM SHALL display the updated information.*
-- [ ] **A - 15:** *WHEN a user marks a progress marker as complete, THE SYSTEM SHALL display it as completed.*
-- [ ] **A - 16:** *WHEN a user views their progress, THE SYSTEM SHALL display their progress without ranking it against another user's progress.*
-- [ ] **A - 17:** *WHEN a user removes a progress marker, THE SYSTEM SHALL remove it from the user's progress list.*
-- [ ] **A - 18:** *WHEN a user identifies an expectation they do not understand or have not yet met, THE SYSTEM SHALL display resources associated with that expectation when such resources exist.*
-- [ ] **A - 19:** *WHEN an external resource is displayed, THE SYSTEM SHALL identify its source.*
-- [ ] **A - 20:** *WHEN a user selects an available external resource, THE SYSTEM SHALL provide access to the original resource.*
-- [ ] **A - 21:** *IF no relevant resource is found, THEN THE SYSTEM SHALL indicate that no matching resource was found.*
-- [ ] **A - 22:** *WHEN a user's environment or situation changes, THE SYSTEM SHALL replace the displayed resources with resources associated with the new environment or situation.*
-- [ ] **A - 23:** *WHEN a user chooses to view other experiences, THE SYSTEM SHALL display anonymous experiences associated with the user's selected environment or situation when such experiences exist.*
-- [ ] **A - 24:** *WHEN a user submits an experience anonymously, THE SYSTEM SHALL not display the user's name with that experience.*
-- [ ] **A - 25:** *WHEN anonymous experiences are displayed, THE SYSTEM SHALL identify the situation or environment associated with each experience when that information is available.*
-- [ ] **A - 26:** *IF no anonymous experiences are associated with the user's selected environment or situation, THEN THE SYSTEM SHALL indicate that no matching experiences are currently available.*
-- [ ] **A - 27:** *THE SYSTEM SHALL NOT display a leaderboard of users.*
-- [ ] **A - 28:** *THE SYSTEM SHALL NOT assign a user a performance rank based on another user's performance.*
-- [ ] **A - 29:** *WHEN a user views general expectations or resources, THE SYSTEM SHALL not require the user to provide identifying information.*
-- [ ] **A - 30:** *WHEN a user submits an anonymous experience, THE SYSTEM SHALL not display personally identifying information with the experience.*
+- [ ] **A - 02:** IF a user submits a goal/expectation with an empty name or a percentage outside the range of 0 to 100, THEN THE SYSTEM SHALL prevent the goal/expectation from being saved and display an error message.
+
+- [ ] **A - 03:** WHEN a goal/expectation is displayed, THE SYSTEM SHALL classify it as Not Started at 0%, In Progress from 1% through 99%, or Completed at 100%.
+
+- [ ] **A - 04:** WHEN a user edits an existing goal/expectation and submits a valid name and percentage, THE SYSTEM SHALL save the updated values and display the changes.
+
+- [ ] **A - 05:** WHEN a user views multiple in-progress goals/expectations, THE SYSTEM SHALL display them in descending order by percentage complete.
+
+- [ ] **A - 06:** WHEN a user removes an existing progress marker, THE SYSTEM SHALL remove the marker from the progress tracker and no longer display it.
+
+- [ ] **A - 07:** WHEN a user changes a goal/expectations's percentage to 100%, THE SYSTEM SHALL move the marker from the In Progress section to the Completed section.
+
+- [ ] **A - 08:** WHEN a user reloads the program after saving a goal/expectation, THE SYSTEM SHALL display the previously saved marker with its saved name, percentage, and status.
 
 ## Verification
-### Applicable to HW3 Feature:
+### Applicable to Progress Markers:
 | Criterion | Steps and input | Expected result | Observed result | Status | Evidence / commit |
 |---|---|---|---|---|---|
-| A - 12 | Enter goal/expectation, select status, and click "Add progress marker." | The system displays the marker in the user's in progress list. | The progress marker appeared in the In Progress list after submission. If I were to have selected Completed as the status, it would have populated there.| PASS | [https://github.com/kylascott11/mgt3745-hw3/commit/0836b06a62f744ac859bc4a222b8731a2735adcb] |
-| A - 13 | Create a goal and select a status. | The system displays the selected status with the goal. | I selected Completed, and the goal displayed as completed. | PASS  |[https://github.com/kylascott11/mgt3745-hw3/commit/2c6361f4b7a905a02cbb12eac1bfea8c2965af7d]|---
-| A - 14 | Select "Edit" on an existing goal, change the name, and select "Save." | The system displays the updated information. | The updated goal name appeared after saving. | PASS | [https://github.com/kylascott11/mgt3745-hw3/commit/8e2b314f4ef0bc963b1368398938c96a7bcf536c] |
-| A - 15 | Select "Mark complete" on an in-progress goal. | The system displays the goal as completed. | The system shows the goal under the completed section.| PASS| [https://github.com/kylascott11/mgt3745-hw3/commit/8e2b314f4ef0bc963b1368398938c96a7bcf536c] |
-| A - 16 | View the progress list containing multiple goals. | The system displays the user's progress without ranking it against another user's progress. | The page displayed the user's progress markers without rankings or comparisons to other users. | PASS | [https://github.com/kylascott11/mgt3745-hw3/commit/1354ed9fca315ff60d69c6f70160264f86c028e9] |
-| A - 17 | Select "Delete" on an existing goal. | The system removes the goal from the user's progress list. | The selected goal was removed from the list. | PASS | [https://github.com/kylascott11/mgt3745-hw3/commit/8e2b314f4ef0bc963b1368398938c96a7bcf536c] |
-| A - 27 | Review the progress page for rankings or leaderboards. | The system does not display a leaderboard of users. | The progress page does not display a leaderboard. | PASS | [https://github.com/kylascott11/mgt3745-hw3/commit/8e2b314f4ef0bc963b1368398938c96a7bcf536c] |
-| A - 28 | Review the progress page for a performance ranking based on another user. | The system does not assign a user a performance rank based on another user's performance. | The progress page does not assign or display performance rankings. | PASS | [https://github.com/kylascott11/mgt3745-hw3/commit/8e2b314f4ef0bc963b1368398938c96a7bcf536c] |
-| A - 29 | Open and use the general progress-tracking page without entering identifying information. | The system does not require identifying information. | I can create and view my exepctations/goals without providing identifying information. | PASS | [https://github.com/kylascott11/mgt3745-hw3/commit/8e2b314f4ef0bc963b1368398938c96a7bcf536c] |
+| A - 01 | Enter a progress marker name (goal/expectation) and a whole number percentage between 0–100, then submit. | A new marker appears with the entered name and percentage. |The marker appeared with the entered name and percentage. | PASS | [ ] |
+| A - 02 | Submit a goal/expectation with an invalid percentage or an empty name. | The goal/expectation should not be saved, and a validation error should appear. |Initally, no validation error message appeared for the percentage user input section. After revision, this validation error appeared. | FAIL -> PASS  |[ ]|
+| A - 03 | Create an in-progress goal/expectation, then change its percentage to a different value that changes its progress status. | The goal/expectation marker's status and section should update to reflect the new percentage. | Based on the percentage entered, the marker fell into the in-progress (1-99%), completed (100%), or not started (0%) list.| PASS | [https://github.com/kylascott11/mgt3745-hw3/commit/8e2b314f4ef0bc963b1368398938c96a7bcf536c] |
+| A - 04 | Select an existing goal/expectation marker, change its name and percentage, and save the changes. | The marker should display the updated name and percentage. | The marker displayed the updated information after editing.| PASS| [https://github.com/kylascott11/mgt3745-hw3/commit/8e2b314f4ef0bc963b1368398938c96a7bcf536c] |
+| A - 05 | Create multiple in-progress markers with different percentages, such as 25% and 74%. | Markers should appear from highest to lowest percentage complete. | The goal/expectation markers appeared in order on the in-progress list. | PASS | [https://github.com/kylascott11/mgt3745-hw3/commit/1354ed9fca315ff60d69c6f70160264f86c028e9] |
+| A - 06 | Create a goal/expectation marker, then select the option to remove it. | The selected goal should be removed and no longer appear in the tracker. | The selected goal was removed from the list. | PASS | [https://github.com/kylascott11/mgt3745-hw3/commit/8e2b314f4ef0bc963b1368398938c96a7bcf536c] |
+| A - 07 | Change an in-progress goal/expectations' percentage to 100%. | The marker should move from the In Progress section to the Completed section. | Initally, the goal/expectation marker stayed on the in-progres list despite showing 100% completion. After revision, it now reclassifies based on the percentage completion. | FAIL -> PASS | [https://github.com/kylascott11/mgt3745-hw3/commit/8e2b314f4ef0bc963b1368398938c96a7bcf536c] |
+| A - 08 | Create and save a progress marker, then reload the webpage. | The previously saved marker should still appear with its associated status. | The marker remained after the page was reloaded with its saved information. | PASS | [https://github.com/kylascott11/mgt3745-hw3/commit/8e2b314f4ef0bc963b1368398938c96a7bcf536c] |
 
-### Not Applicable to HW3 Feature:
-| Criterion | Steps and input | Expected result | Observed result | Status | Evidence / commit |
-|---|---|---|---|---|---|
-| A - 01 | Open the program. | The system prompts the user to identify an environment and situation. | The current page opens directly to the progress tracker and does not prompt the user to identify an environment or situation. | FAIL|I focused on the progress page, which is what the program opens up to. It does not include an environment/situation selection like this acceptance statement expects.|
-| A - 02 | Select an environment. | The system allows the user to select or enter their current stage or situation. | The current page does not provide an environment selection feature. | CANNOT TEST YET|Not testable because HW3 implementation is limited to editable progress markers and does not include environment selection.|
-| A - 03 | Provide an environment and situation. | Expectations and resources associated with the environment and situation are displayed. | The current page does not provide an environment or situation input or display expectations and resources. | CANNOT TEST YET |Not testable because environment and situation inputs are outside the HW3 scope. |
-| A - 04 | Change the selected environment or situation. | The displayed expectations and resources are replaced with those associated with the new environment or situation. | The current page does not provide an environment or situation selection that can be changed. | CANNOT TEST YET | Not testable because environment and situation inputs are outside the HW3 scope. |
-| A - 05 | Attempt to upload an external resource. | The system analyzes the resource to identify expectations for the selected environment. | The current page does not provide an external-resource upload feature. | CANNOT TEST YET | Not testable because uploads are outside the HW3 scope. |
-| A - 06 | Identify an environment. | The system displays expectations from an identified external source or uploaded materials. | The current page does not provide an environment-selection feature or display external expectations. | CANNOT TEST YET | Not testable because environment and situation inputs are outside the HW3 scope. |
-| A - 07 | Display an expectation. | The system identifies the source of the expectation. | The current page does not display environment expectations or their sources. | CANNOT TEST YET | Not testable because displaying sourced expectations is outside the HW3 scope. |
-| A - 08 | Select an available source. | The system provides access to the original source. | The current page does not display external sources. | CANNOT TEST YET | Not testable because accessing/displaying sourced info. is outside the HW3 scope. |
-| A - 09 | Provide a current stage or situation. | The system displays expectations identified for that stage or situation. | The current page does not provide a stage or situation input or display expectations. | CANNOT TEST YET | Not testable because stage/situation input and expectation display are outside HW3  scope. |
-| A - 10 | View an expectation that cannot be supported by an identified external source. | The system indicates that the expectation could not be established. | The current page does not establish or display external expectations. | CANNOT TEST YET | Not testable because displaying sourced expectations and results is outside the HW3 scope. |
-| A - 11 | Attempt to display an unsupported expectation. | The system does not present an unsupported claim as an established expectation. | The current page does not establish or display environment expectations. | CANNOT TEST YET | Not testable because establishing and displaying environment expectations is outside HW3 scope. |
-| A - 18 | Identify an expectation that is not understood or has not been met. | The system displays associated resources when they exist. | The current page does not provide expectations or personalized resources. | CANNOT TEST YET | Not testable because personalized resources are outside HW3 scope. |
-| A - 19 | Display an external resource. | The system identifies the resource's source. | The current page does not display external resources. | CANNOT TEST YET | Not testable because personalized resources are outside HW3 scope. |
-| A - 20 | Select an available external resource. | The system provides access to the original resource. | The current page does not display external resources. | CANNOT TEST YET | Not testable because personalized resources are outside HW3 scope. |
-| A - 21 | Search for a resource when no relevant resource exists. | The system indicates that no matching resource was found. | The current page does not provide a resource-search feature. | CANNOT TEST YET | Not testable because personalized resources are outside HW3 scope. |
-| A - 22 | Change the user's environment or situation. | The system replaces the displayed resources with resources associated with the new environment or situation. | The current page does not provide environment or situation selection or personalized resources. | CANNOT TEST YET | Not testable because personalized resources are outside HW3 scope. |
-| A - 23 | Choose to view other users' experiences. | The system displays anonymous experiences associated with the selected environment or situation when available. | The current page does not provide an anonymous-experience feature. | CANNOT TEST YET | Not testable because anonymous user experiences are outside the HW3  scope. |
-| A - 24 | Submit an experience anonymously. | The system does not display the user's name with the experience. | The current page does not provide an experience-submission feature. | CANNOT TEST YET | Not testable because anonymous user experiences are outside the HW3  scope. |
-| A - 25 | View anonymous experiences. | The system identifies the situation or environment associated with each experience when available. | The current page does not provide an anonymous-experience feature. | CANNOT TEST YET | Not testable because anonymous user experiences are outside the HW3  scope. |
-| A - 30 | Submit an anonymous experience. | The system does not display personally identifying information with the experience. | The current page does not provide an anonymous-experience submission feature. | CANNOT TEST YET | Not testable because anonymous user experiences are outside the HW3  scope. |
+
