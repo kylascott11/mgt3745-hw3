@@ -16,17 +16,9 @@ This Progress Tracker is designed to help users determine whether they are doing
 ## See It Work
 The editable progress markers feature allows users to create a goal, assign a percentage complete, edit the status/goal, and remove it. In-progress markers are automatically ordered from the highest percentage complete to the lowest. If the assigned percentage is 0%, it gets moved to not started. Similarily, if the assigned percentage is 100%, the goal gets moved to the completed list. 
 
-The following GIF explicates Acceptance Criterion A - 01:
+**The following GIF explicates Acceptance Criterion A - 01:**
 
-<!-- REQUIRED: at least one image or GIF of the feature meeting an EARS statement.
-     Put media in the docs/ folder. Keep GIFs under 5 MB.
-     Record: macOS Cmd+Shift+5, Windows Win+Alt+R or Snipping Tool video. Convert at ezgif.com.
-     Markdown image syntax: -->
-Put a screenshot or GIF under docs/ and link it here with descriptive alt text. Explain which acceptance criterion it demonstrates. A screenshot does not prove reload or storage behavior by itself.
 ![Creating a goal/expectation and seeing it add to the progress tracker with the entered name and percentage](docs/a-01.gif)
-
-<!-- HTML gives you sizing control markdown does not: -->
-<!-- <img src="docs/screenshot.png" width="480" alt="The entry list after three saves"> -->
 
 ## How to Run
 This project runs inside a GitHub Codespace. No local install.
@@ -60,31 +52,18 @@ This diagram describes the Progress Tracker's load-and-add flow. In `app.js`, `l
 
 | Area | State | Why |
 |------|-------|-----|
-| Create and display progress markers | Works | Tested by creating a marker and confirming it appears in the progress list. |
-| Percentage complete | Works | Tested with valid percentage values and confirmed the percentage is displayed with the marker. |
-| Rank in-progress tasks | Works | Tested with multiple markers at different percentages and confirmed they are ordered from highest to lowest. |
-| Edit progress markers | Works | Tested by changing a marker's name, status, and percentage. |
-| Remove progress markers | Works | Tested by deleting a marker and confirming it is removed from the list. |
-| Invalid percentage input | Works | Tested with values outside the allowed 0–100 range or goals with no text input. |
-| Data survives reload | Works | [Record the actual result and link the verification evidence.] |
-| Multi-user sync | Deferred | Browser-local storage does not provide multi-user synchronization. |
-
-| Save and display | [Works / Partial / Broken / Not tested] | [Link your verification evidence] |
-| Invalid input | [Works / Partial / Broken / Not tested] | [Link your verification evidence] |
-| Data survives reload / storage failure | [Works / Partial / Broken / Not tested] | [Link your verification evidence] |
-| Multi-user sync (starter limitation) | Deferred | Browser-local storage does not provide sync. Explain your own scope and decision in [ADR-001](context/ARCHITECTURE.md). |
-
+| Create and display progress markers | Works | [Tested by creating a marker and confirming it appears in the progress list.](docs/a-01.gif) |
+| Percentage complete | Works | [Tested with valid percentage values (whole number from 0-100) and confirmed the percentage is displayed with the marker.](docs/a-01.gif) |
+| Rank in-progress tasks | Works | [Tested with multiple markers at different percentages and confirmed they are ordered from highest to lowest.](.md) |
+| Edit progress markers | Works | [Tested by changing a marker's name, status, and percentage.](context/FEATURES.md) |
+| Remove progress markers | Works | [Tested by deleting a marker and confirming it is removed from the list.](context/FEATURES.md) |
+| Invalid percentage input | Works | [Tested with values outside the allowed 0–100 range or goals with no text input.](context/FEATURES.md) |
+| Data survives reload | Works | [Tested by closing out the program and then clicking Go Live after.](docs/dataReload.gif) |
+| Multi-user sync | Deferred | [Browser-local storage does not provide multi-user synchronization: ADR-001](context/ARCHITECTURE.md) |
 
 <details>
 <summary>Verification results (click to expand)</summary>
-
-Keep the full verification record in [FEATURES.md](context/FEATURES.md). Summarize it here or link directly to its Verification section; keep both consistent.
-
-| Criterion / EARS statement | Steps and input | Expected result | Observed result | Status | Evidence / commit |
-|---|---|---|---|---|---|
-| [Your selected criterion ID] | [Reproducible procedure] | [State before testing] | [What actually happened] | [PASS / FAIL / CANNOT TEST / DEFERRED] | [Link] |
-
-Cover a normal action, relevant invalid input, and persistence or failure. PASS requires observed results that match expectations; all-PASS is acceptable with evidence. For CANNOT TEST, state the limitation and next step. Identify unselected requirements separately; DEFERRED does not waive the required HW3 feature. A screenshot alone cannot establish reload or storage-failure behavior.
+The full verification record for each acceptance criterion, including testing steps, expected and observed results, status, and evidence, is documented in the [Verification Section of FEATURES.md](context/FEATURES.md#verification).
 
 </details>
 
