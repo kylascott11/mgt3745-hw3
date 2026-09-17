@@ -1,20 +1,13 @@
 # Progress Tracker
-
-<!-- Badges are optional but cheap. shields.io generates them from a URL. -->
 ![Status](https://img.shields.io/badge/Status-In%20Progress-lightblue)
 ![Module](https://img.shields.io/badge/MGT%203745-HW3-051E39)
-
-> HW3, MGT 3745 O. Replace every [bracketed prompt] with your own writing.
-> Lines between `<!--` and `-->` are notes to you. They are invisible on GitHub. Delete them when done.
-> This README is the first thing an employer, a teammate, or an agent reads. It makes
-> a case for the repository. Show, then tell.
 
 ## What
 This Progress Tracker is designed to help users determine whether they are doing enough to meet their own expectations and the expectations of their environment. For HW3, I implemented an editable progress-marker feature that allows users to create goals or expectations, assign a status and percentage complete, edit or remove them, and track their progress over time. In-progress markers are ordered by the user's own percentage of completion so users can see which expectations they have made the most progress toward. The larger problem and its framing are described in [PROJECT.md](context/PROJECT.md), and the detailed feature requirements are documented in [FEATURES.md](context/FEATURES.md).
 
 
 ## See It Work
-The editable progress markers feature allows users to create a goal, assign a percentage complete, edit the status/goal, and remove it. In-progress markers are automatically ordered from the highest percentage complete to the lowest. If the assigned percentage is 0%, it gets moved to not started. Similarily, if the assigned percentage is 100%, the goal gets moved to the completed list. 
+Theis editable progress tracking feature allows users to create a goal, assign a percentage complete, edit the status/goal, and remove it. In-progress markers are automatically ordered from the highest percentage complete to the lowest. If the assigned percentage is 0%, it is labeled under not started. Similarily, if the assigned percentage is 100%, the goal gets moved to the completed list. 
 
 **The following GIF explicates Acceptance Criterion A - 01:**
 
@@ -83,8 +76,6 @@ Read in this order:
 The scaffold has **eleven canonical files in `/context`: six active files above and five previews**: [STYLE.md](context/STYLE.md), [TOOLS.md](context/TOOLS.md), [SKILLS.md](context/SKILLS.md), [EVALS.md](context/EVALS.md), and [AGENTS.md](context/AGENTS.md). 
 
 ## AI Use
-
-<!-- A Delegation Decision Record without the name. From HW5 this becomes a formal DDR. -->
 
 **Tool and task delegated:** *AI assistance drafted and revised the implementation of the editable progress-marker feature, including creating, editing, deleting, sorting, validating, and persisting progress markers. Once I understood the structure of the functions and when to edit `app.js` versus `index.html`, I had an easier time going in and changing the input to produce my desireable output--for example, creating the percentageError message and where I wanted it to appear.*
 
