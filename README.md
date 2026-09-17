@@ -16,14 +16,14 @@ This Progress Tracker is designed to help users determine whether they are doing
 ## See It Work
 The editable progress markers feature allows users to create a goal, assign a percentage complete, edit the status/goal, and remove it. In-progress markers are automatically ordered from the highest percentage complete to the lowest. If the assigned percentage is 0%, it gets moved to not started. Similarily, if the assigned percentage is 100%, the goal gets moved to the completed list. 
 
-The following GIF explicates Acceptance Criterior A - 12:
+The following GIF explicates Acceptance Criterion A - 01:
 
 <!-- REQUIRED: at least one image or GIF of the feature meeting an EARS statement.
      Put media in the docs/ folder. Keep GIFs under 5 MB.
      Record: macOS Cmd+Shift+5, Windows Win+Alt+R or Snipping Tool video. Convert at ezgif.com.
      Markdown image syntax: -->
 Put a screenshot or GIF under docs/ and link it here with descriptive alt text. Explain which acceptance criterion it demonstrates. A screenshot does not prove reload or storage behavior by itself.
-![Saving an entry and seeing it appear in the list](docs/demo.gif)
+![Creating a goal/expectation and seeing it add to the progress tracker with the entered name and percentage](docs/a-01.gif)
 
 <!-- HTML gives you sizing control markdown does not: -->
 <!-- <img src="docs/screenshot.png" width="480" alt="The entry list after three saves"> -->

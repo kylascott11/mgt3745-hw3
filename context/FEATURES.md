@@ -119,7 +119,6 @@ Status: ACTIVE.
 - [ ] **A - 08:** WHEN a user reloads the program after saving a goal/expectation, THE SYSTEM SHALL display the previously saved marker with its saved name, percentage, and status.
 
 ## Verification
-### Applicable to Progress Markers:
 | Criterion | Steps and input | Expected result | Observed result | Status | Evidence / commit |
 |---|---|---|---|---|---|
 | A - 01 | Enter a progress marker name (goal/expectation) and a whole number percentage between 0–100, then submit. | A new marker appears with the entered name and percentage. |The marker appeared with the entered name and percentage. | PASS | [Add Goal](https://github.com/kylascott11/mgt3745-hw3/commit/1738d8ce0f6bfc273b13fca237dcc040fce2f0fa) |
