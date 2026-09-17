@@ -15,11 +15,11 @@ Status: ACTIVE in Module 3.
 
 ### 1/3/5 Scoring Definition:
 *For each criterion, a score of 1 means "least favorable," 3  means "moderate," and 5 means "most favorable."*
-- For cost to start: 5 represents the lowest cost
-- For time to working: 5 represents the shortest time
-- For inspectability: 5 represents the easiest option to inspect
-- For switching cost: 5 represents the easiest option to swap later
-- For fit to spec: 5 represents the option that best supports requirements in FEATURES.md
+- **For cost to start:** 5 represents the lowest cost
+- **For time to working:** 5 represents the shortest time
+- **For inspectability:** 5 represents the easiest option to inspect
+- **For switching cost:** 5 represents the easiest option to swap later
+- **For fit to spec:** 5 represents the option that best supports requirements in FEATURES.md
 
 ### Option Scores:
 | Criterion | Weight | Hand-built option | Existing-service option | AI-assisted build |
@@ -31,7 +31,7 @@ Status: ACTIVE in Module 3.
 | Switching cost | 3| 4| 2| 4|
 | Fit to spec | 5| 4| 4| 4|
 
-**Totals:**
+#### Totals:
 1. **Hand-built option:** 88
 2. **Existing-service option:** 88
 3. **AI-Assisted build:** 94
@@ -50,7 +50,7 @@ Status: ACTIVE in Module 3.
 **Decision:** Delegate development of the editable progress-tracker feature to AI assistance.
 
 **Consequences and revisit trigger:** 
-- **Easier:** Faster development, less technical difficulty with implementation* 
+- **Easier:** Faster development, less technical difficulty with implementation
 - **Harder:** Difficulty inspecting the code, especially if the code requires debugging; does not guarantee that all acceptance criteria will be met
 - **Revisit:** Module 4, when a database becomes available; if the architecture changes, write ADR-002 and supersede this decision
 

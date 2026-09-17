@@ -11,7 +11,7 @@ Status: ACTIVE.
 | # | Feature | Kano class | Reason from research |
 |---|---------|-----------|----------------------|
 | 1 |Anonymous Discussion Board| Attractive          | Both interviews compared themselves to others, while neither person mentioned having access to other people's experiences that could reassure them that they weren't alone. An anonymous space would allow users to hear directly from people who have experienced similar situations, providing them more realistic expectations.                  |
-| **2** |**Editable Progress Markers**|**Must-be**|**Profile A identified passing his first check ride as an important milestone that would prove to himself he is capable of becoming a pilot. Seeing progress toward meaningful milestones could help him recognize his development rather than focusing only on how far ahead others are.***                 |
+| **2** |**Editable Progress Markers**|**Must-be**|**Profile A identified passing his first check ride as an important milestone that would prove to himself he is capable of becoming a pilot. Seeing progress toward meaningful milestones could help him recognize his development rather than focusing only on how far ahead others are.**           |
 | 3 |Celebration/Encouragement Notifications|Indifferent           | Profile B already reminds herself that she was accepted, suggesting additional generic reassurance may not resolve the underlying comparison. Profile A's Flight School posts Instagram stories when students pass check-rides and get their licenses, so additional celebration notifications might not contribute much.                  |
 | 4 |Personalized Environment Expectations        |   Performance        |   Both profiles felt insecure when their experiences differed from those around them. Profile A compared his flight experience to more experienced coworkers, while Profile B compared her social experience to her roommate and floormates. Providing expectations pulled from existing, reliable resources could give users a reference point based on environmental expectations instead of relying on the people around them to determine what is normal. However, satisfaction for this feature scales with the usefulness and quality of the information provided.               |
 | 5 |Performance Benchmarking         |    Reverse       |  Depending on the person, this could be an attractive feature. However, based on my interviews, both Profile A and Profile B  used people around them as benchmarks for whether they were doing well, and both experienced insecurity when they perceived themselves as falling short. Even if I choose the right peer set for them to compare to, providing additional rankings could reinforce the imposter syndrome if they're falling short of the applicable peer set. |
@@ -52,8 +52,8 @@ People entering new or unfamiliar environments may have difficulty determining w
 
 ***Bolded** steps are applicable to HW3.*
 
-**1:** Identify the user's situation*
-- **1. When a user begins using the program, the system shall prompt the user to identify the environment and situation they want to evaluate.**
+**1:** Identify the user's situation
+- 1. **When a user begins using the program, the system shall prompt the user to identify the environment and situation they want to evaluate.**
 - 2. The system shall allow the user to select an environment such as school, work, training, or another relevant environment.
 - 3. The system shall allow the user to provide additional information about their current stage or situation within that environment.
 - 4. The system shall use the selected environment and situation to determine which expectations and resources to display.
@@ -67,11 +67,11 @@ People entering new or unfamiliar environments may have difficulty determining w
 - 6. If reliable information about an expectation is not available, it should indicate that the expectation could not be established.
 
 **3:** Track personal progress
-- **1. When expectations are displayed, the system shall allow the user to create personal progress markers related to those expectations.**
-- **2. Each progress marker shall include a description and a user-selected status.**
-- **3. The user shall be allowed update the status of a progress marker.**
-- **4. The system shall display completed and incomplete progress markers separately.**
-- **5. The system shall not compare the user's progress markers with another user's progress.**
+- 1. **When expectations are displayed, the system shall allow the user to create personal progress markers related to those expectations.**
+- 2. **Each progress marker shall include a description and a user-selected status.**
+- 3. **The user shall be allowed update the status of a progress marker.**
+- 4. **The system shall display completed and incomplete progress markers separately.**
+- 5. **The system shall not compare the user's progress markers with another user's progress.**
 
 **4:** Provide personalized resources
 - 1. When a user identifies an expectation they do not understand or have not yet met, the system shall display resources associated with that expectation when such resources exist.
@@ -87,8 +87,8 @@ People entering new or unfamiliar environments may have difficulty determining w
 - 4. The user shall be able to choose whether to view other users' experiences.
 
 **6:** Benchmarking
-- **1. The program shall not display leaderboards or rankings of users.**
-- **2. The program shall not calculate a user's rank relative to other users.**
+- 1. **The program shall not display leaderboards or rankings of users.**
+- 2. **The program shall not calculate a user's rank relative to other users.**
 - 3. When presenting information about other people's experiences, the program shall emphasize differences in experiences rather than rank users by performance.
 - 4. If benchmark information is provided, it shall describe environmental expectations or requirements rather than individual user rankings.
 

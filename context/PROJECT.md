@@ -4,7 +4,7 @@ Status: ACTIVE.
 
 ## 1. Candidate Problem  
 
-*A problem that I face frequently, professionally and personally, is the imposter syndrome, which causes me to question whether I deserve to be somewhere. Even when I begin to feel deserving, my environment or the expectations around it shift, and I start comparing myself to those around me, questioning whether my managers/bosses/friends like my presence, wondering if I am meeting expectations, or feeling like I need to prove myself, all of which challenge my confidence.*
+A problem that I face frequently, professionally and personally, is the imposter syndrome, which causes me to question whether I deserve to be somewhere. Even when I begin to feel deserving, my environment or the expectations around it shift, and I start comparing myself to those around me, questioning whether my managers/bosses/friends like my presence, wondering if I am meeting expectations, or feeling like I need to prove myself, all of which challenge my confidence.
 
 ---
 
