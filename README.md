@@ -96,16 +96,33 @@ The scaffold has **eleven canonical files in `/context`: six active files above 
 
 **Instruction discovery and compliance:** *The AI tool (GitHub Copilot) was used in AI-assisted mode and discovered the applicable project instructions in `CLAUDE.md`, including the coding standards in `STANDARDS.md` and the selected requirements in `FEATURES.md`. The tool demonstrated this by stating, "I’ll read the two required context documents first, then inspect the current `index.html` and replace only its interface structure. I’ll keep the result HTML-only and validate the scaffold without touching CSS, JavaScript, or other files." I manually reviewed the generated changes for compliance with the standards, including descriptive camelCase naming, separation of HTML/CSS/JavaScript, and the prohibition on inline styles and `innerHTML` with user input. Some changes did not fully follow the naming standard, as shown by the casing of `inProgressGoalList` in [this commit](https://github.com/kylascott11/mgt3745-hw3/commit/06b93ecb310d16b9fa05f535a5b8a5491f66e56f).*
 
-**Actual hours on this assignment (optional):** *I did not time the amount spent, but if I had to estimate, I'd say I worked on it for anywhere from 1-4 hours a day across 6 days. If I had to guess, I'd say I probably spent around 10 hours.
+**Actual hours on this assignment:** *I did not time the amount spent, but if I had to estimate, I'd say I worked on it for anywhere from 1-4 hours a day across 6 days. If I had to guess, I'd say I probably spent around 10 hours.*
 
 ## Explain, Change, Verify
+**Selected Function:** 
+```javascript
+function updateStatusOptions(statusSelect, percentage) {
+    const inProgressOption = Array.from(statusSelect.options)
+      .find(option => option.value === 'in-progress');
+    inProgressOption.disabled = percentage === 0;
+    if (percentage === 0 && statusSelect.value === 'in-progress') {
+      statusSelect.value = 'not-started';
+```
+**Input:** The status dropdown and the progress marker's user-inputted percentage
 
-[Identify one function and explain its input, state changes, and output in your own words. Link a meaningful before/after code change, state its expected effect, and record the observed behavior and evidence. Explain why the change matters to your selected requirement. This paragraph is part of the existing README submission.]
+**State Changes:** It changes the state of the dropdown by disabling the In Progress option when the percentage is 0. If the percentage is 0 while the marker is already set to In Progress, the function will also change the selected status to Not Started.
 
-<!-- Things this README could also do, if they earn their place:
-     - GitHub alerts:  > [!NOTE]  > [!WARNING]  > [!TIP]
-     - Task lists:     - [x] done   - [ ] not yet
-     - Emoji:          :rocket: :white_check_mark:
-     - Footnotes:      text[^1]  ...  [^1]: the note
-     - Embedded HTML tables, <kbd>Ctrl</kbd>+<kbd>S</kbd>, <sup>, <sub>
-     None are required. A README that reads well with none of them beats one that uses all of them. -->
+**Output:** Updated status dropdown shown to the user, with In Progress grayed out if percentage is set to 0.
+Change: I updated the status-selection logic so that a progress marker with 0% completion cannot remain classified as in-progress. I expected the in-progress option to become unavailable at 0% and the status to automatically change to not-started if necessary.
+
+**Before/After Code:** Originally, the code shown below, which assigned a marker a status of Completed if its percentage was 100% and In Progress otherwise, was the only one there. I also did not have a Not Started section. Because a marker with 0% completion should not be classified as In Progress, I added the `updateStatusOptions()` function after adding the Not Started section. This allows a marker with 0% completion to be classified as Not Started and prevents the user from selecting In Progress at 0%.
+
+```javascript
+  function getProgressStatus(percentage) {
+    return percentage === 100 ? 'completed' : 'in-progress';
+```
+
+**Expected Effect:** In Progress should not be an option as a status if user input for Percentage Complete is 0.
+
+**Observed behavior:** When the percentage complete inputted was 0%, the In Progress status became unavailable. When the percentage increased above 0%, this option became available. This change matters because it keeps the marker's status consistent. Completed remained available as a status option because a goal added directly to the Completed section does not display a percentage. 100% completion is assumed.
+![Status options for 0% completion](docs/testingZero.png)
