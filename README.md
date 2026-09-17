@@ -63,6 +63,7 @@ This diagram describes the Progress Tracker's load-and-add flow. In `app.js`, `l
 
 <details>
 <summary>Verification results (click to expand)</summary>
+
 The full verification record for each acceptance criterion, including testing steps, expected and observed results, status, and evidence, is documented in the [Verification Section of FEATURES.md](context/FEATURES.md#verification).
 
 </details>
