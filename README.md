@@ -60,6 +60,15 @@ This diagram describes the Progress Tracker's load-and-add flow. In `app.js`, `l
 
 | Area | State | Why |
 |------|-------|-----|
+| Create and display progress markers | Works | Tested by creating a marker and confirming it appears in the progress list. |
+| Percentage complete | Works | Tested with valid percentage values and confirmed the percentage is displayed with the marker. |
+| Rank in-progress tasks | Works | Tested with multiple markers at different percentages and confirmed they are ordered from highest to lowest. |
+| Edit progress markers | Works | Tested by changing a marker's name, status, and percentage. |
+| Remove progress markers | Works | Tested by deleting a marker and confirming it is removed from the list. |
+| Invalid percentage input | Works | Tested with values outside the allowed 0–100 range or goals with no text input. |
+| Data survives reload | Works | [Record the actual result and link the verification evidence.] |
+| Multi-user sync | Deferred | Browser-local storage does not provide multi-user synchronization. |
+
 | Save and display | [Works / Partial / Broken / Not tested] | [Link your verification evidence] |
 | Invalid input | [Works / Partial / Broken / Not tested] | [Link your verification evidence] |
 | Data survives reload / storage failure | [Works / Partial / Broken / Not tested] | [Link your verification evidence] |
