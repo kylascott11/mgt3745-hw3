@@ -101,7 +101,8 @@ Status: ACTIVE.
 
 ---
 
-## 6. Acceptance
+## 6. Acceptance Statements Applicable to Progress Markers:
+*Made 8 Acceptance statements applicable to HW3 feature with checkable outcomes per HW2 feedback.*
 - [ ] **A - 01:** WHEN a user submits a goal/expectation with a non-empty name and a whole-number percentage from 0 to 100, THE SYSTEM SHALL add the goal/expectation to the progress tracker and display the entered name and percentage.
 
 - [ ] **A - 02:** IF a user submits a goal/expectation with an empty name or a percentage outside the range of 0 to 100, THEN THE SYSTEM SHALL prevent the goal/expectation from being saved and display an error message.
